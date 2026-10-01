@@ -1,0 +1,25 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/common_interfaces_merlab__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/common_interfaces_merlab/srv/detail/send_joint_trajectory__type_support_c.cpp.o"
+  "CMakeFiles/common_interfaces_merlab__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/common_interfaces_merlab/srv/detail/send_joint_trajectory__type_support_c.cpp.o.d"
+  "CMakeFiles/common_interfaces_merlab__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/common_interfaces_merlab/srv/detail/send_joint_trajectory_point__type_support_c.cpp.o"
+  "CMakeFiles/common_interfaces_merlab__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/common_interfaces_merlab/srv/detail/send_joint_trajectory_point__type_support_c.cpp.o.d"
+  "CMakeFiles/common_interfaces_merlab__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/common_interfaces_merlab/srv/detail/send_pose__type_support_c.cpp.o"
+  "CMakeFiles/common_interfaces_merlab__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/common_interfaces_merlab/srv/detail/send_pose__type_support_c.cpp.o.d"
+  "CMakeFiles/common_interfaces_merlab__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/common_interfaces_merlab/srv/detail/send_twist__type_support_c.cpp.o"
+  "CMakeFiles/common_interfaces_merlab__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/common_interfaces_merlab/srv/detail/send_twist__type_support_c.cpp.o.d"
+  "libcommon_interfaces_merlab__rosidl_typesupport_fastrtps_c.pdb"
+  "libcommon_interfaces_merlab__rosidl_typesupport_fastrtps_c.so"
+  "rosidl_typesupport_fastrtps_c/common_interfaces_merlab/srv/detail/send_joint_trajectory__rosidl_typesupport_fastrtps_c.h"
+  "rosidl_typesupport_fastrtps_c/common_interfaces_merlab/srv/detail/send_joint_trajectory__type_support_c.cpp"
+  "rosidl_typesupport_fastrtps_c/common_interfaces_merlab/srv/detail/send_joint_trajectory_point__rosidl_typesupport_fastrtps_c.h"
+  "rosidl_typesupport_fastrtps_c/common_interfaces_merlab/srv/detail/send_joint_trajectory_point__type_support_c.cpp"
+  "rosidl_typesupport_fastrtps_c/common_interfaces_merlab/srv/detail/send_pose__rosidl_typesupport_fastrtps_c.h"
+  "rosidl_typesupport_fastrtps_c/common_interfaces_merlab/srv/detail/send_pose__type_support_c.cpp"
+  "rosidl_typesupport_fastrtps_c/common_interfaces_merlab/srv/detail/send_twist__rosidl_typesupport_fastrtps_c.h"
+  "rosidl_typesupport_fastrtps_c/common_interfaces_merlab/srv/detail/send_twist__type_support_c.cpp"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/common_interfaces_merlab__rosidl_typesupport_fastrtps_c.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

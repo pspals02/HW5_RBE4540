@@ -1,0 +1,23 @@
+[0.708s] Invoking command in '/home/paige-spalsbury/ros2_ws/src/hover_above': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/paige-spalsbury/ros2_ws/src/hover_above/build/hover_above/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/paige-spalsbury/ros2_ws/src/hover_above/install/hover_above/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/hover_above build --build-base /home/paige-spalsbury/ros2_ws/src/hover_above/build/hover_above/build install --record /home/paige-spalsbury/ros2_ws/src/hover_above/build/hover_above/install.log --install-scripts $base/lib/hover_above --single-version-externally-managed install_data
+[0.946s] running egg_info
+[0.960s] writing build/hover_above/hover_above.egg-info/PKG-INFO
+[0.960s] writing dependency_links to build/hover_above/hover_above.egg-info/dependency_links.txt
+[0.960s] writing entry points to build/hover_above/hover_above.egg-info/entry_points.txt
+[0.960s] writing requirements to build/hover_above/hover_above.egg-info/requires.txt
+[0.961s] writing top-level names to build/hover_above/hover_above.egg-info/top_level.txt
+[0.989s] reading manifest file 'build/hover_above/hover_above.egg-info/SOURCES.txt'
+[0.990s] adding license file 'LICENSE'
+[0.990s] writing manifest file 'build/hover_above/hover_above.egg-info/SOURCES.txt'
+[0.990s] running build
+[0.990s] running build_py
+[0.991s] running install
+[0.995s] running install_lib
+[1.010s] running install_data
+[1.010s] running install_egg_info
+[1.026s] removing '/home/paige-spalsbury/ros2_ws/src/hover_above/install/hover_above/lib/python3.12/site-packages/hover_above-0.0.0-py3.12.egg-info' (and everything under it)
+[1.026s] Copying build/hover_above/hover_above.egg-info to /home/paige-spalsbury/ros2_ws/src/hover_above/install/hover_above/lib/python3.12/site-packages/hover_above-0.0.0-py3.12.egg-info
+[1.027s] running install_scripts
+[1.130s] Installing hover script to /home/paige-spalsbury/ros2_ws/src/hover_above/install/hover_above/lib/hover_above
+[1.130s] Installing move script to /home/paige-spalsbury/ros2_ws/src/hover_above/install/hover_above/lib/hover_above
+[1.130s] writing list of installed files to '/home/paige-spalsbury/ros2_ws/src/hover_above/build/hover_above/install.log'
+[1.156s] Invoked command in '/home/paige-spalsbury/ros2_ws/src/hover_above' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/paige-spalsbury/ros2_ws/src/hover_above/build/hover_above/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/paige-spalsbury/ros2_ws/src/hover_above/install/hover_above/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base build/hover_above build --build-base /home/paige-spalsbury/ros2_ws/src/hover_above/build/hover_above/build install --record /home/paige-spalsbury/ros2_ws/src/hover_above/build/hover_above/install.log --install-scripts $base/lib/hover_above --single-version-externally-managed install_data

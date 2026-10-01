@@ -1,0 +1,9 @@
+{
+  "package_name": "common_interfaces_merlab",
+  "non_idl_tuples": [
+    "/home/paige-spalsbury/ros2_ws/src/hover_above/common_interfaces_merlab:srv/SendPose.srv",
+    "/home/paige-spalsbury/ros2_ws/src/hover_above/common_interfaces_merlab:srv/SendTwist.srv",
+    "/home/paige-spalsbury/ros2_ws/src/hover_above/common_interfaces_merlab:srv/SendJointTrajectory.srv",
+    "/home/paige-spalsbury/ros2_ws/src/hover_above/common_interfaces_merlab:srv/SendJointTrajectoryPoint.srv"
+  ]
+}

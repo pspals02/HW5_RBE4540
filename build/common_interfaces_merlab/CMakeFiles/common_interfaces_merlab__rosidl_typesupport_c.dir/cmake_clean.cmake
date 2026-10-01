@@ -1,0 +1,21 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/common_interfaces_merlab__rosidl_typesupport_c.dir/rosidl_typesupport_c/common_interfaces_merlab/srv/send_joint_trajectory__type_support.cpp.o"
+  "CMakeFiles/common_interfaces_merlab__rosidl_typesupport_c.dir/rosidl_typesupport_c/common_interfaces_merlab/srv/send_joint_trajectory__type_support.cpp.o.d"
+  "CMakeFiles/common_interfaces_merlab__rosidl_typesupport_c.dir/rosidl_typesupport_c/common_interfaces_merlab/srv/send_joint_trajectory_point__type_support.cpp.o"
+  "CMakeFiles/common_interfaces_merlab__rosidl_typesupport_c.dir/rosidl_typesupport_c/common_interfaces_merlab/srv/send_joint_trajectory_point__type_support.cpp.o.d"
+  "CMakeFiles/common_interfaces_merlab__rosidl_typesupport_c.dir/rosidl_typesupport_c/common_interfaces_merlab/srv/send_pose__type_support.cpp.o"
+  "CMakeFiles/common_interfaces_merlab__rosidl_typesupport_c.dir/rosidl_typesupport_c/common_interfaces_merlab/srv/send_pose__type_support.cpp.o.d"
+  "CMakeFiles/common_interfaces_merlab__rosidl_typesupport_c.dir/rosidl_typesupport_c/common_interfaces_merlab/srv/send_twist__type_support.cpp.o"
+  "CMakeFiles/common_interfaces_merlab__rosidl_typesupport_c.dir/rosidl_typesupport_c/common_interfaces_merlab/srv/send_twist__type_support.cpp.o.d"
+  "libcommon_interfaces_merlab__rosidl_typesupport_c.pdb"
+  "libcommon_interfaces_merlab__rosidl_typesupport_c.so"
+  "rosidl_typesupport_c/common_interfaces_merlab/srv/send_joint_trajectory__type_support.cpp"
+  "rosidl_typesupport_c/common_interfaces_merlab/srv/send_joint_trajectory_point__type_support.cpp"
+  "rosidl_typesupport_c/common_interfaces_merlab/srv/send_pose__type_support.cpp"
+  "rosidl_typesupport_c/common_interfaces_merlab/srv/send_twist__type_support.cpp"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/common_interfaces_merlab__rosidl_typesupport_c.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

@@ -1,0 +1,16 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from common_interfaces_merlab/srv/SendJointTrajectoryPoint.srv
+// generated code does not contain a copyright notice
+
+#include "trajectory_msgs/msg/JointTrajectoryPoint.idl"
+
+module common_interfaces_merlab {
+  module srv {
+    struct SendJointTrajectoryPoint_Request {
+      trajectory_msgs::msg::JointTrajectoryPoint goal_point;
+    };
+    struct SendJointTrajectoryPoint_Response {
+      boolean success;
+    };
+  };
+};
