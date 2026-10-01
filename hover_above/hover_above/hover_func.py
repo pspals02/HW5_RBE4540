@@ -187,8 +187,7 @@ class HoverFunc(Node):
             )
             cv_image = self.br.imgmsg_to_cv2(message, desired_encoding='bgr8')
             self._image_mask(cv_image)
-            self._canny_edge_detection(cv_image)
-            self._harris_corners(cv_image)
+            
             self._hough_circ_centers(cv_image)
     
             filename = 'saved_ros2_image.png'
@@ -247,10 +246,6 @@ class HoverFunc(Node):
         cv2.imwrite(filename_green, masked_image_green)
         cv2.imwrite(filename_yellow, masked_image_yellow)
         
-    def _canny_edge_detection(self, cv_image):
-        gray = cv2.cvtColor(cv_image, cv2.COLOR_BGR2GRAY)
-        edges = cv2.Canny(gray, 100, 200)
-        cv2.imwrite('hw4_canny_edges.png', edges)
         
     def _center_dot(self,mask):
 
@@ -266,22 +261,6 @@ class HoverFunc(Node):
 
         return center_x, center_y
         
-    def _harris_corners(self, cv_image):
-        gray = cv2.cvtColor(cv_image, cv2.COLOR_BGR2GRAY)
-        gray = np.float32(gray)
-
-        corners = cv2.cornerHarris(
-            gray,
-            blockSize=2,
-            ksize=3,
-            k=0.04
-        )
-        
-        corners = cv2.dilate(corners, None)
-
-        result_image = cv_image.copy()
-        result_image[corners > 0.008 * corners.max()] = [255, 100, 255]
-        cv2.imwrite('hw4_harris_corners.png', result_image)
         
     def _hough_circ_centers(self,cv_image):
         gray = cv2.cvtColor(cv_image, cv2.COLOR_BGR2GRAY)
