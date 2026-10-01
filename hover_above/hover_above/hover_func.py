@@ -52,6 +52,15 @@ class HoverFunc(Node):
         self.declare_parameter("pick_y", 0.42)
         self.declare_parameter("pick_z", 0.63)
         
+        self.init_yellow_center=(0.0,0.0)
+        self.init_blue_center=(0.0,0.0)
+        self.init_teal_center=(0.0,0.0)
+        self.init_green_center=(0.0,0.0)
+        
+        self.des_blue_center=(270.0,288.0)
+        self.des_yellow_center=(368.0,190.0)
+        self.des_teal_center=(370.0,290.0)
+        self.des_green_center=(272.0,192.0)
         
         self.declare_parameter("hover_height", 0.10)
         self.declare_parameter("lift_height", 0.20)
@@ -180,7 +189,7 @@ class HoverFunc(Node):
     def _image_callback(self, message):
         self.latest_image = message
         
-        if self.image_count == 1:
+        if self.image_count >= 1:
             self.get_logger().info(
                 f"Received first image: {message.width}x{message.height}, "
                 f"encoding={message.encoding}"
@@ -201,7 +210,9 @@ class HoverFunc(Node):
         lower_teal = np.array([150, 150, 0])
         upper_teal = np.array([255, 255, 100])
 
-        lower_green = np.array([0, 100, 0])
+        lower_green = np.array([0,self.declare_parameter("pick_x", 0.2)
+        self.declare_parameter("pick_y", 0.42)
+        self.declare_parameter("pick_z", 0.63) 100, 0])
         upper_green = np.array([80, 255, 80])
 
         lower_blue = np.array([150, 0, 0])
@@ -220,7 +231,12 @@ class HoverFunc(Node):
         green_center = self._center_dot(green_mask)
         blue_center = self._center_dot(blue_mask)
         yellow_center = self._center_dot(yellow_mask)
-
+        if self.image_count==1:
+            self.init_teal_center = teal_enter
+            self.init_green_center = green_center
+            self.init_blue_center = blue_center
+            self.init_yellow_center = yellow_center
+        
         print("teal:", teal_center)
         print("Green:", green_center)
         print("Blue:", blue_center)
@@ -334,7 +350,115 @@ class HoverFunc(Node):
                 break
             time.sleep(0.1)
         return True
+     
+     def move_cartesian(self, x, y, z):
+        """Move tool0 to a position in base_link (meters), pointing downward."""
+        request = SendPose.Request()
+        request.pose.position.x = float(x)
+        request.pose.position.y = float(y)
+        request.pose.position.z = float(z)
+        # Quaternion (x, y, z, w) = (1, 0, 0, 0).
+        request.pose.orientation.x = 1.0
+        request.pose.orientation.w = 0.0
+        request.pose.orientation.y = 0.0
+        request.pose.orientation.z = 0.0
 
+        self.get_logger().info(f'Moving to ({x:.2f}, {y:.2f}, {z:.2f})')
+        future = self.cartesian_client.call_async(request)
+        rclpy.spin_until_future_complete(self, future, timeout_sec=120.0)
+        if not future.done():
+            self.get_logger().error('No motion response; stopping the motion sequence')
+            return False
+        response = future.result()
+        if response is None or not response.success:
+            self.get_logger().error('Cartesian motion failed; stopping the motion sequence')
+            return False
+        return True
+        
+     def set_ee_velocity(self, vx=0.0, vy=0.0, vz=0.0,
+                        wx=0.0, wy=0.0, wz=0.0):
+        """Set tool-frame linear (m/s) and angular (rad/s) velocities."""
+        request = SendTwist.Request()
+        request.twist.linear.x = float(vx)
+        request.twist.linear.y = float(vy)
+        request.twist.linear.z = float(vz)
+        request.twist.angular.x = float(wx)
+        request.twist.angular.y = float(wy)
+        request.twist.angular.z = float(wz)
+        future = self.ee_velocity_client.call_async(request)
+        # The first command also starts Servo through the motion interface.
+        rclpy.spin_until_future_complete(self, future, timeout_sec=20.0)
+        if not future.done():
+            self.get_logger().error('No velocity response; stopping the motion sequence')
+            return False
+        response = future.result()
+        if response is None or not response.success:
+            message = response.message if response is not None else 'No response'
+            self.get_logger().error(f'Velocity command failed: {message}')
+            return False
+        return True
+
+    def move_ee_velocity(self, vx=0.0, vy=0.0, vz=0.0,
+                         wx=0.0, wy=0.0, wz=0.0, duration=1.0):
+        """Refresh a tool-frame velocity for duration seconds; caller stops it."""
+        self.get_logger().info(
+            f'Tool-frame velocity: linear=({vx}, {vy}, {vz}) m/s, '
+            f'angular=({wx}, {wy}, {wz}) rad/s for {duration:.1f} s'
+        )
+        if not self.set_ee_velocity(vx, vy, vz, wx, wy, wz):
+            return False
+        end_time = time.monotonic() + duration
+        while rclpy.ok():
+            remaining = end_time - time.monotonic()
+            if remaining <= 0.0:
+                return True
+            # Refresh before the interface's default 0.5-second watchdog expires.
+            time.sleep(min(0.1, remaining))
+            if time.monotonic() >= end_time:
+                return True
+            if not self.set_ee_velocity(vx, vy, vz, wx, wy, wz):
+                return False
+        return False
+        
+    def _first_move(self):
+        self.get_logger().info('Waiting for /cartesian_ref...')
+        while rclpy.ok():
+            if self.cartesian_client.wait_for_service(timeout_sec=1.0):
+                break
+        if not rclpy.ok():
+            return
+
+        if not self.move_cartesian(0.2, 0.42, 0.63):
+            return
+        #if not self.move_cartesian(-0.45, -0.15, 0.63):
+         #   return
+
+        self.get_logger().info('Waiting for /set_ee_velocity...')
+        while rclpy.ok():
+            if self.ee_velocity_client.wait_for_service(timeout_sec=1.0):
+                break
+        if not rclpy.ok():
+            return
+
+        # Move along tool0's +X, then -X (about 9 cm each at 0.03 m/s).
+        # Switch directly between velocities; send zero when the sequence ends.
+        try:
+            if not self.move_ee_velocity( vy=0.03, vz=0.03, wx=-0.16, wz=0.03, duration=3.0):
+                return
+            #if not self.move_ee_velocity( vy=0.03, vz=0.03, wy=0.008, wz=0.008, duration=3.0):
+             #   return
+        
+        finally:
+            # Also request a stop if a command fails or the user interrupts.
+            # If ROS has shut down, the interface watchdog stops stale commands.
+            self.image_count+=1
+            stopped = self.set_ee_velocity() if rclpy.ok() else False
+        if not stopped:
+            return
+        
+            
+        self.get_logger().info('First Motion sequence complete')
+        
     def _execute_hover(self):
         self.get_logger().info(
             "Starting with fixed coordinates; received sensor counts are "

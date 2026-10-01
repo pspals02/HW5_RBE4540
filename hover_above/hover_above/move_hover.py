@@ -206,10 +206,6 @@ class MoveHover(Node):
         if not rclpy.ok():
             return
 
-        # TODO: Implement your homework here. Edit or extend these two moves.
-        # Each call waits for the robot to finish before continuing.
-        # Images are received while the motion methods spin waiting for replies.
-        # To receive images outside those methods, call rclpy.spin_once(self).
         if not self.move_cartesian(0.2, 0.42, 0.63):
             return
         #if not self.move_cartesian(-0.45, -0.15, 0.63):
