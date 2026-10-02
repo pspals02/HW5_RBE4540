@@ -7,6 +7,8 @@ import numpy as np
 import rclpy
 from builtin_interfaces.msg import Duration
 from common_interfaces_merlab.srv import SendJointTrajectoryPoint
+from common_interfaces_merlab.srv import SendTwist, SendPose
+
 from common_interfaces_merlab.srv import SendPose
 from geometry_msgs.msg import Pose
 from rclpy.callback_groups import ReentrantCallbackGroup
@@ -52,15 +54,15 @@ class HoverFunc(Node):
         self.declare_parameter("pick_y", 0.42)
         self.declare_parameter("pick_z", 0.63)
         
-        self.init_yellow_center=(0.0,0.0)
-        self.init_blue_center=(0.0,0.0)
-        self.init_teal_center=(0.0,0.0)
-        self.init_green_center=(0.0,0.0)
+        self.curr_yellow_center=[0.0,0.0]
+        self.curr_blue_center=[0.0,0.0]
+        self.curr_teal_center=[0.0,0.0]
+        self.curr_green_center=[0.0,0.0]
         
-        self.des_blue_center=(270.0,288.0)
-        self.des_yellow_center=(368.0,190.0)
-        self.des_teal_center=(370.0,290.0)
-        self.des_green_center=(272.0,192.0)
+        self.des_blue_center=[270.0,288.0]
+        self.des_yellow_center=[368.0,190.0]
+        self.des_teal_center=[370.0,290.0]
+        self.des_green_center=[272.0,192.0]
         
         self.declare_parameter("hover_height", 0.10)
         self.declare_parameter("lift_height", 0.20)
@@ -115,7 +117,7 @@ class HoverFunc(Node):
             callback_group=self.callback_group,
         )
         
-
+        self.ee_velocity_client = self.create_client(SendTwist, '/set_ee_velocity')
         gripper_topic = self.get_parameter("gripper_command_topic").value
         self.gripper_pub = self.create_publisher(
             Float64MultiArray,
@@ -197,22 +199,38 @@ class HoverFunc(Node):
             cv_image = self.br.imgmsg_to_cv2(message, desired_encoding='bgr8')
             self._image_mask(cv_image)
             
-            self._hough_circ_centers(cv_image)
-    
+            #self._hough_circ_centers(cv_image)
+            
+            print("Calc feature err...")
+            curr_img_feats = np.array([
+                        self.curr_teal_center,
+                        self.curr_green_center,
+                        self.curr_blue_center,
+                        self.curr_yellow_center
+                    ]).flatten()
+
+            desired_img_feats = np.array([
+                        self.des_teal_center,
+                        self.des_green_center,
+                        self.des_blue_center,
+                        self.des_yellow_center
+                    ]).flatten()
+
+            print("curr feat:", curr_img_feats)
+            feat_err=curr_img_feats-desired_img_feats
+            print("feature error:", feat_err)
             filename = 'saved_ros2_image.png'
             cv2.imwrite(filename, cv_image)
             
             
             self.get_logger().info(f'Successfully saved image to {filename}')
-            rclpy.shutdown()
+            #rclpy.shutdown()
        
     def _image_mask(self, cv_image):
         lower_teal = np.array([150, 150, 0])
         upper_teal = np.array([255, 255, 100])
 
-        lower_green = np.array([0,self.declare_parameter("pick_x", 0.2)
-        self.declare_parameter("pick_y", 0.42)
-        self.declare_parameter("pick_z", 0.63) 100, 0])
+        lower_green = np.array([0, 100, 0])
         upper_green = np.array([80, 255, 80])
 
         lower_blue = np.array([150, 0, 0])
@@ -231,16 +249,7 @@ class HoverFunc(Node):
         green_center = self._center_dot(green_mask)
         blue_center = self._center_dot(blue_mask)
         yellow_center = self._center_dot(yellow_mask)
-        if self.image_count==1:
-            self.init_teal_center = teal_enter
-            self.init_green_center = green_center
-            self.init_blue_center = blue_center
-            self.init_yellow_center = yellow_center
-        
-        print("teal:", teal_center)
-        print("Green:", green_center)
-        print("Blue:", blue_center)
-        print("Yellow:", yellow_center)
+       
         
         mask_green = cv2.cvtColor(green_mask, cv2.COLOR_GRAY2BGR)
         mask_teal = cv2.cvtColor(teal_mask, cv2.COLOR_GRAY2BGR)
@@ -251,6 +260,19 @@ class HoverFunc(Node):
         masked_image_green = cv_image & mask_green
         masked_image_blue = cv_image & mask_blue
         masked_image_yellow = cv_image & mask_yellow
+        
+        if self.image_count>=1:
+            
+            self.curr_teal_center = teal_center
+            self.curr_green_center = green_center
+            self.curr_blue_center = blue_center
+            self.curr_yellow_center = yellow_center
+            print("Current Coordinates:")
+        
+        print("teal:", teal_center)
+        print("Green:", green_center)
+        print("Blue:", blue_center)
+        print("Yellow:", yellow_center)
         
         filename_teal = 'saved_ros2_teal_image.png'
         filename_blue = 'saved_ros2_blue_image.png'
@@ -275,7 +297,7 @@ class HoverFunc(Node):
         center_x = np.mean(x)
         center_y = np.mean(y)
 
-        return center_x, center_y
+        return [center_x, center_y]
         
         
     def _hough_circ_centers(self,cv_image):
@@ -351,7 +373,7 @@ class HoverFunc(Node):
             time.sleep(0.1)
         return True
      
-     def move_cartesian(self, x, y, z):
+    def move_cartesian(self, x, y, z):
         """Move tool0 to a position in base_link (meters), pointing downward."""
         request = SendPose.Request()
         request.pose.position.x = float(x)
@@ -375,7 +397,7 @@ class HoverFunc(Node):
             return False
         return True
         
-     def set_ee_velocity(self, vx=0.0, vy=0.0, vz=0.0,
+    def set_ee_velocity(self, vx=0.0, vy=0.0, vz=0.0,
                         wx=0.0, wy=0.0, wz=0.0):
         """Set tool-frame linear (m/s) and angular (rad/s) velocities."""
         request = SendTwist.Request()
@@ -451,7 +473,7 @@ class HoverFunc(Node):
         finally:
             # Also request a stop if a command fails or the user interrupts.
             # If ROS has shut down, the interface watchdog stops stale commands.
-            self.image_count+=1
+            self.image_count=1
             stopped = self.set_ee_velocity() if rclpy.ok() else False
         if not stopped:
             return
@@ -465,9 +487,10 @@ class HoverFunc(Node):
             f"images={self.image_count}"
         )
         
-        if not self._move_home():
+        #if not self._move_home():
+         #   return False
+        if not self._first_move():
             return False
-       
             
         pick_pose = self._make_pose(self.pick_position)
         #init_hover = self._make_pose(self.pick_position)
