@@ -107,7 +107,12 @@ class HoverFunc(Node):
 
         self.latest_image = None
         self.image_count = 0
-      
+        self.cam_cent_x = 320
+        self.cam_cent_y = 240
+        self.focal=3.2  #mm
+        self.img_depth=0.5
+        self.pix_size=0.01 #mm
+        
 
         self.image_sub = self.create_subscription(
             Image,
@@ -208,15 +213,15 @@ class HoverFunc(Node):
                         self.curr_blue_center,
                         self.curr_yellow_center
                     ]).flatten()
-
+            print("curr feat:", curr_img_feats)
             desired_img_feats = np.array([
-                        self.des_teal_center,
-                        self.des_green_center,
-                        self.des_blue_center,
-                        self.des_yellow_center
+                        self._image_to_cam(self.des_teal_center),
+                        self._image_to_cam(self.des_green_center),
+                        self._image_to_cam(self.des_blue_center),
+                        self._image_to_cam(self.des_yellow_center)
                     ]).flatten()
 
-            print("curr feat:", curr_img_feats)
+            
             feat_err=curr_img_feats-desired_img_feats
             print("feature error:", feat_err)
             filename = 'saved_ros2_image.png'
@@ -225,7 +230,13 @@ class HoverFunc(Node):
             
             self.get_logger().info(f'Successfully saved image to {filename}')
             #rclpy.shutdown()
-       
+    def _image_to_cam(self, point):
+        xc=((point[0]-self.cam_cent_x)*self.img_depth)/(self.focal/self.pix_size)
+        yc=((point[1]-self.cam_cent_y)*self.img_depth)/(self.focal/self.pix_size)
+        
+        return [xc, yc]
+        
+        
     def _image_mask(self, cv_image):
         lower_teal = np.array([150, 150, 0])
         upper_teal = np.array([255, 255, 100])
@@ -263,10 +274,10 @@ class HoverFunc(Node):
         
         if self.image_count>=1:
             
-            self.curr_teal_center = teal_center
-            self.curr_green_center = green_center
-            self.curr_blue_center = blue_center
-            self.curr_yellow_center = yellow_center
+            self.curr_teal_center = self._image_to_cam(teal_center)
+            self.curr_green_center = self._image_to_cam(green_center)
+            self.curr_blue_center = self._image_to_cam(blue_center)
+            self.curr_yellow_center = self._image_to_cam(yellow_center)
             print("Current Coordinates:")
         
         print("teal:", teal_center)
