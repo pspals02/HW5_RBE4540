@@ -112,7 +112,7 @@ class HoverFunc(Node):
         self.focal=3.2  #mm
         self.img_depth=0.5
         self.pix_size=0.01 #mm
-        
+        self.err_decay = 0.2
 
         self.image_sub = self.create_subscription(
             Image,
@@ -207,23 +207,41 @@ class HoverFunc(Node):
             #self._hough_circ_centers(cv_image)
             
             print("Calc feature err...")
-            curr_img_feats = np.array([
-                        self.curr_teal_center,
-                        self.curr_green_center,
-                        self.curr_blue_center,
-                        self.curr_yellow_center
-                    ]).flatten()
+            curr_img_feats = np.concatenate([
+                self.curr_teal_center,
+                self.curr_green_center,
+                self.curr_blue_center,
+                self.curr_yellow_center
+            ]).reshape(8, 1)
+
+            desired_img_feats = np.concatenate([
+                self._image_to_cam(self.des_teal_center),
+                self._image_to_cam(self.des_green_center),
+                self._image_to_cam(self.des_blue_center),
+                self._image_to_cam(self.des_yellow_center)
+            ]).reshape(8, 1)
+
             print("curr feat:", curr_img_feats)
-            desired_img_feats = np.array([
-                        self._image_to_cam(self.des_teal_center),
-                        self._image_to_cam(self.des_green_center),
-                        self._image_to_cam(self.des_blue_center),
-                        self._image_to_cam(self.des_yellow_center)
-                    ]).flatten()
+            
 
             
             feat_err=curr_img_feats-desired_img_feats
             print("feature error:", feat_err)
+            
+            L_teal = self._image_jacob(self.curr_teal_center)
+            L_green = self._image_jacob(self.curr_green_center)
+            L_blue = self._image_jacob(self.curr_blue_center)
+            L_yellow = self._image_jacob(self.curr_yellow_center)
+            print("Obtained image JACOBS")
+            L = np.vstack([
+                L_teal,
+                L_green,
+                L_blue,
+                L_yellow
+            ])
+            L_plus= np.pinv(L)
+            vc = self.err_decay  * L_plus * feat_err
+            print("Output Velocity:", vc)
             filename = 'saved_ros2_image.png'
             cv2.imwrite(filename, cv_image)
             
@@ -235,7 +253,16 @@ class HoverFunc(Node):
         yc=((point[1]-self.cam_cent_y)*self.img_depth)/(self.focal/self.pix_size)
         
         return [xc, yc]
-        
+    
+    def _image_jacob(self, point):
+        x = point[0]
+        y = point [1]
+        Z = self.img_depth
+        L = np.array([
+            [-1/Z, 0, x/Z, x*y, -(1+x**2), y],
+            [0, -1/Z, y/Z, 1+y**2, -x*y, -x]
+            ])
+        return L
         
     def _image_mask(self, cv_image):
         lower_teal = np.array([150, 150, 0])
