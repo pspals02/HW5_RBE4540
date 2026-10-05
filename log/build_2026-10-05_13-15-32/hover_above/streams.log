@@ -1,0 +1,51 @@
+[1.007s] Invoking command in '/home/artrpelli/HW5_RBE4540/hover_above': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/artrpelli/HW5_RBE4540/build/hover_above/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/artrpelli/HW5_RBE4540/install/hover_above/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/hover_above build --build-base /home/artrpelli/HW5_RBE4540/build/hover_above/build install --record /home/artrpelli/HW5_RBE4540/build/hover_above/install.log --single-version-externally-managed install_data
+[1.330s] running egg_info
+[1.330s] creating ../build/hover_above/hover_above.egg-info
+[1.353s] writing ../build/hover_above/hover_above.egg-info/PKG-INFO
+[1.354s] writing dependency_links to ../build/hover_above/hover_above.egg-info/dependency_links.txt
+[1.354s] writing entry points to ../build/hover_above/hover_above.egg-info/entry_points.txt
+[1.354s] writing requirements to ../build/hover_above/hover_above.egg-info/requires.txt
+[1.354s] writing top-level names to ../build/hover_above/hover_above.egg-info/top_level.txt
+[1.354s] writing manifest file '../build/hover_above/hover_above.egg-info/SOURCES.txt'
+[1.403s] reading manifest file '../build/hover_above/hover_above.egg-info/SOURCES.txt'
+[1.403s] adding license file 'LICENSE'
+[1.403s] writing manifest file '../build/hover_above/hover_above.egg-info/SOURCES.txt'
+[1.404s] running build
+[1.404s] running build_py
+[1.404s] creating /home/artrpelli/HW5_RBE4540/build/hover_above/build
+[1.404s] creating /home/artrpelli/HW5_RBE4540/build/hover_above/build/lib
+[1.404s] creating /home/artrpelli/HW5_RBE4540/build/hover_above/build/lib/hover_above
+[1.404s] copying hover_above/hover_func.py -> /home/artrpelli/HW5_RBE4540/build/hover_above/build/lib/hover_above
+[1.405s] copying hover_above/ur_move_simple_interface.py -> /home/artrpelli/HW5_RBE4540/build/hover_above/build/lib/hover_above
+[1.405s] copying hover_above/move_hover.py -> /home/artrpelli/HW5_RBE4540/build/hover_above/build/lib/hover_above
+[1.405s] copying hover_above/__init__.py -> /home/artrpelli/HW5_RBE4540/build/hover_above/build/lib/hover_above
+[1.405s] running install
+[1.414s] running install_lib
+[1.438s] creating /home/artrpelli/HW5_RBE4540/install/hover_above/lib/python3.12/site-packages/hover_above
+[1.438s] copying /home/artrpelli/HW5_RBE4540/build/hover_above/build/lib/hover_above/hover_func.py -> /home/artrpelli/HW5_RBE4540/install/hover_above/lib/python3.12/site-packages/hover_above
+[1.438s] copying /home/artrpelli/HW5_RBE4540/build/hover_above/build/lib/hover_above/ur_move_simple_interface.py -> /home/artrpelli/HW5_RBE4540/install/hover_above/lib/python3.12/site-packages/hover_above
+[1.438s] copying /home/artrpelli/HW5_RBE4540/build/hover_above/build/lib/hover_above/move_hover.py -> /home/artrpelli/HW5_RBE4540/install/hover_above/lib/python3.12/site-packages/hover_above
+[1.439s] copying /home/artrpelli/HW5_RBE4540/build/hover_above/build/lib/hover_above/__init__.py -> /home/artrpelli/HW5_RBE4540/install/hover_above/lib/python3.12/site-packages/hover_above
+[1.439s] byte-compiling /home/artrpelli/HW5_RBE4540/install/hover_above/lib/python3.12/site-packages/hover_above/hover_func.py to hover_func.cpython-312.pyc
+[1.446s] byte-compiling /home/artrpelli/HW5_RBE4540/install/hover_above/lib/python3.12/site-packages/hover_above/ur_move_simple_interface.py to ur_move_simple_interface.cpython-312.pyc
+[1.451s] byte-compiling /home/artrpelli/HW5_RBE4540/install/hover_above/lib/python3.12/site-packages/hover_above/move_hover.py to move_hover.cpython-312.pyc
+[1.453s] byte-compiling /home/artrpelli/HW5_RBE4540/install/hover_above/lib/python3.12/site-packages/hover_above/__init__.py to __init__.cpython-312.pyc
+[1.453s] running install_data
+[1.453s] creating /home/artrpelli/HW5_RBE4540/install/hover_above/share/ament_index
+[1.453s] creating /home/artrpelli/HW5_RBE4540/install/hover_above/share/ament_index/resource_index
+[1.453s] creating /home/artrpelli/HW5_RBE4540/install/hover_above/share/ament_index/resource_index/packages
+[1.453s] copying resource/hover_above -> /home/artrpelli/HW5_RBE4540/install/hover_above/share/ament_index/resource_index/packages
+[1.454s] copying package.xml -> /home/artrpelli/HW5_RBE4540/install/hover_above/share/hover_above
+[1.454s] creating /home/artrpelli/HW5_RBE4540/install/hover_above/share/hover_above/launch
+[1.454s] copying launch/simple_pick_place_demo.launch.py -> /home/artrpelli/HW5_RBE4540/install/hover_above/share/hover_above/launch
+[1.454s] copying launch/ur_move_simple_interface.launch.py -> /home/artrpelli/HW5_RBE4540/install/hover_above/share/hover_above/launch
+[1.454s] creating /home/artrpelli/HW5_RBE4540/install/hover_above/share/hover_above/config
+[1.454s] copying config/ur_move_simple_interface.yaml -> /home/artrpelli/HW5_RBE4540/install/hover_above/share/hover_above/config
+[1.454s] copying config/simple_pick_place.yaml -> /home/artrpelli/HW5_RBE4540/install/hover_above/share/hover_above/config
+[1.455s] running install_egg_info
+[1.478s] Copying ../build/hover_above/hover_above.egg-info to /home/artrpelli/HW5_RBE4540/install/hover_above/lib/python3.12/site-packages/hover_above-0.0.0-py3.12.egg-info
+[1.479s] running install_scripts
+[1.678s] Installing hover script to /home/artrpelli/HW5_RBE4540/install/hover_above/lib/hover_above
+[1.678s] Installing move script to /home/artrpelli/HW5_RBE4540/install/hover_above/lib/hover_above
+[1.678s] Installing move_interface script to /home/artrpelli/HW5_RBE4540/install/hover_above/lib/hover_above
+[1.679s] writing list of installed files to '/home/artrpelli/HW5_RBE4540/build/hover_above/install.log'

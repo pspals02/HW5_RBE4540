@@ -1,0 +1,24 @@
+[1.022s] Invoking command in '/home/artrpelli/HW5_RBE4540/hover_above': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/artrpelli/HW5_RBE4540/build/hover_above/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/artrpelli/HW5_RBE4540/install/hover_above/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/hover_above build --build-base /home/artrpelli/HW5_RBE4540/build/hover_above/build install --record /home/artrpelli/HW5_RBE4540/build/hover_above/install.log --single-version-externally-managed install_data
+[1.316s] running egg_info
+[1.339s] writing ../build/hover_above/hover_above.egg-info/PKG-INFO
+[1.340s] writing dependency_links to ../build/hover_above/hover_above.egg-info/dependency_links.txt
+[1.340s] writing entry points to ../build/hover_above/hover_above.egg-info/entry_points.txt
+[1.340s] writing requirements to ../build/hover_above/hover_above.egg-info/requires.txt
+[1.340s] writing top-level names to ../build/hover_above/hover_above.egg-info/top_level.txt
+[1.385s] reading manifest file '../build/hover_above/hover_above.egg-info/SOURCES.txt'
+[1.385s] adding license file 'LICENSE'
+[1.386s] writing manifest file '../build/hover_above/hover_above.egg-info/SOURCES.txt'
+[1.386s] running build
+[1.386s] running build_py
+[1.386s] running install
+[1.393s] running install_lib
+[1.416s] running install_data
+[1.416s] running install_egg_info
+[1.441s] removing '/home/artrpelli/HW5_RBE4540/install/hover_above/lib/python3.12/site-packages/hover_above-0.0.0-py3.12.egg-info' (and everything under it)
+[1.441s] Copying ../build/hover_above/hover_above.egg-info to /home/artrpelli/HW5_RBE4540/install/hover_above/lib/python3.12/site-packages/hover_above-0.0.0-py3.12.egg-info
+[1.442s] running install_scripts
+[1.591s] Installing hover script to /home/artrpelli/HW5_RBE4540/install/hover_above/lib/hover_above
+[1.591s] Installing move script to /home/artrpelli/HW5_RBE4540/install/hover_above/lib/hover_above
+[1.591s] Installing move_interface script to /home/artrpelli/HW5_RBE4540/install/hover_above/lib/hover_above
+[1.591s] writing list of installed files to '/home/artrpelli/HW5_RBE4540/build/hover_above/install.log'
+[1.622s] Invoked command in '/home/artrpelli/HW5_RBE4540/hover_above' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/artrpelli/HW5_RBE4540/build/hover_above/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/artrpelli/HW5_RBE4540/install/hover_above/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/hover_above build --build-base /home/artrpelli/HW5_RBE4540/build/hover_above/build install --record /home/artrpelli/HW5_RBE4540/build/hover_above/install.log --single-version-externally-managed install_data

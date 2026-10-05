@@ -1,0 +1,267 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-69c92214e70ef25f7591.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						15,
+						16,
+						17,
+						18,
+						19
+					]
+				},
+				{
+					"build" : "move_interfaces_merlab__py",
+					"jsonFile" : "directory-move_interfaces_merlab__py-173e03e2d9550ad7006f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/artrpelli/HW5_RBE4540/build/move_interfaces_merlab/move_interfaces_merlab__py",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "move_interfaces_merlab__rs",
+					"jsonFile" : "directory-move_interfaces_merlab__rs-a9c28e7e79dbd1744358.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/artrpelli/HW5_RBE4540/build/move_interfaces_merlab/move_interfaces_merlab__rs",
+					"targetIndexes" : 
+					[
+						14
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "move_interfaces_merlab",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_move_interfaces_merlab_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_move_interfaces_merlab_egg-c11e9b002331c1b625ca.json",
+					"name" : "ament_cmake_python_build_move_interfaces_merlab_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_copy_move_interfaces_merlab::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_copy_move_interfaces_merlab-443cab27ff1397e10d64.json",
+					"name" : "ament_cmake_python_copy_move_interfaces_merlab",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "move_interfaces_merlab::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-move_interfaces_merlab-d7e24afd6ae30d086258.json",
+					"name" : "move_interfaces_merlab",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "move_interfaces_merlab__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-move_interfaces_merlab__cpp-0188596a848cfca40a7b.json",
+					"name" : "move_interfaces_merlab__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "move_interfaces_merlab__py::@5bb802a43fbd5226e3cc",
+					"jsonFile" : "target-move_interfaces_merlab__py-8eff89f8d017de8071aa.json",
+					"name" : "move_interfaces_merlab__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "move_interfaces_merlab__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-move_interfaces_merlab__rosidl_generator_c-2a9c8b024f8afc390a6d.json",
+					"name" : "move_interfaces_merlab__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "move_interfaces_merlab__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-move_interfaces_merlab__rosidl_generator_py-246cafa7b829f5865ca4.json",
+					"name" : "move_interfaces_merlab__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "move_interfaces_merlab__rosidl_generator_type_description::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-move_interfaces_merlab__rosidl_generator_type_description-757ba0dd05e112cfe1b8.json",
+					"name" : "move_interfaces_merlab__rosidl_generator_type_description",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "move_interfaces_merlab__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-move_interfaces_merlab__rosidl_typesupport_c-82605d99411fa0c16f21.json",
+					"name" : "move_interfaces_merlab__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "move_interfaces_merlab__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-move_interfaces_merlab__rosidl_typesupport_cpp-8c428cbcec98ab26ad60.json",
+					"name" : "move_interfaces_merlab__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "move_interfaces_merlab__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-move_interfaces_merlab__rosidl_typesupport_fastrtps_c-63f959f3a8e9637f3cb6.json",
+					"name" : "move_interfaces_merlab__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "move_interfaces_merlab__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-move_interfaces_merlab__rosidl_typesupport_fastrtps_cpp-0edc4edf1e8b14316825.json",
+					"name" : "move_interfaces_merlab__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "move_interfaces_merlab__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-move_interfaces_merlab__rosidl_typesupport_introspection_c-3aa13be13381ee115623.json",
+					"name" : "move_interfaces_merlab__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "move_interfaces_merlab__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-move_interfaces_merlab__rosidl_typesupport_introspection_cpp-2321b860415832eab660.json",
+					"name" : "move_interfaces_merlab__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "move_interfaces_merlab__rs::@9f82b1c20edc8b24e5ac",
+					"jsonFile" : "target-move_interfaces_merlab__rs-d32cc02f36701337f876.json",
+					"name" : "move_interfaces_merlab__rs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "move_interfaces_merlab_s__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-move_interfaces_merlab_s__rosidl_typesupport_c-0556e8abfa0e4fab7b09.json",
+					"name" : "move_interfaces_merlab_s__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "move_interfaces_merlab_s__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-move_interfaces_merlab_s__rosidl_typesupport_fastrtps_c-6593a9b9a674240cb0e3.json",
+					"name" : "move_interfaces_merlab_s__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "move_interfaces_merlab_s__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-move_interfaces_merlab_s__rosidl_typesupport_introspection_c-aca4ffa2e749c31ce144.json",
+					"name" : "move_interfaces_merlab_s__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "move_interfaces_merlab_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-move_interfaces_merlab_uninstall-a2a900dd668b975d3446.json",
+					"name" : "move_interfaces_merlab_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-3a56dbce4b27482dbc3b.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/artrpelli/HW5_RBE4540/build/move_interfaces_merlab",
+		"source" : "/home/artrpelli/HW5_RBE4540/move_interfaces_merlab"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

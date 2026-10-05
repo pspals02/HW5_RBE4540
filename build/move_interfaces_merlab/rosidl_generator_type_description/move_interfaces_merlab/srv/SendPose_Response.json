@@ -1,0 +1,26 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "move_interfaces_merlab/srv/SendPose_Response",
+      "fields": [
+        {
+          "name": "success",
+          "type": {
+            "type_id": 15,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "move_interfaces_merlab/srv/SendPose_Response",
+      "hash_string": "RIHS01_66d210fb42caca373e127f5b120e272270ebb9d3986a6a64c3138adb7634c6ae"
+    }
+  ]
+}

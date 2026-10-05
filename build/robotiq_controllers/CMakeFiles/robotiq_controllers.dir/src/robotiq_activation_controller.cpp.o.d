@@ -1,7 +1,7 @@
 CMakeFiles/robotiq_controllers.dir/src/robotiq_activation_controller.cpp.o: \
- /home/paige-spalsbury/ros2_ws/src/hover_above/ros2_robotiq_gripper/robotiq_controllers/src/robotiq_activation_controller.cpp \
+ /home/artrpelli/HW5_RBE4540/ros2_robotiq_gripper/robotiq_controllers/src/robotiq_activation_controller.cpp \
  /usr/include/stdc-predef.h \
- /home/paige-spalsbury/ros2_ws/src/hover_above/ros2_robotiq_gripper/robotiq_controllers/include/robotiq_controllers/robotiq_activation_controller.hpp \
+ /home/artrpelli/HW5_RBE4540/ros2_robotiq_gripper/robotiq_controllers/include/robotiq_controllers/robotiq_activation_controller.hpp \
  /opt/ros/jazzy/include/controller_interface/controller_interface/controller_interface.hpp \
  /usr/include/c++/13/memory /usr/include/c++/13/bits/memoryfwd.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
@@ -166,7 +166,7 @@ CMakeFiles/robotiq_controllers.dir/src/robotiq_activation_controller.cpp.o: \
  /usr/include/c++/13/bits/erase_if.h /usr/include/c++/13/utility \
  /usr/include/c++/13/bits/stl_relops.h \
  /opt/ros/jazzy/include/realtime_tools/realtime_tools/async_function_handler.hpp \
- /usr/include/fmt/format.h /usr/include/c++/13/cmath /usr/include/math.h \
+ /usr/include/c++/13/atomic /usr/include/c++/13/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
@@ -188,21 +188,11 @@ CMakeFiles/robotiq_controllers.dir/src/robotiq_activation_controller.cpp.o: \
  /usr/include/c++/13/tr1/modified_bessel_func.tcc \
  /usr/include/c++/13/tr1/poly_hermite.tcc \
  /usr/include/c++/13/tr1/poly_laguerre.tcc \
- /usr/include/c++/13/tr1/riemann_zeta.tcc /usr/include/c++/13/cstdint \
- /usr/include/c++/13/cstring /usr/include/string.h /usr/include/strings.h \
- /usr/include/c++/13/stdexcept /usr/include/c++/13/system_error \
- /usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h \
- /usr/include/fmt/core.h /usr/include/c++/13/iterator \
- /usr/include/c++/13/bits/stream_iterator.h \
- /usr/include/c++/13/bits/streambuf_iterator.h \
- /usr/include/c++/13/streambuf /usr/include/c++/13/bits/ios_base.h \
- /usr/include/c++/13/bits/locale_classes.h \
- /usr/include/c++/13/bits/locale_classes.tcc \
- /usr/include/c++/13/bits/streambuf.tcc /usr/include/fmt/ranges.h \
- /usr/include/fmt/format.h /usr/include/c++/13/atomic \
+ /usr/include/c++/13/tr1/riemann_zeta.tcc \
  /usr/include/c++/13/condition_variable /usr/include/c++/13/bits/chrono.h \
- /usr/include/c++/13/ratio /usr/include/c++/13/ctime \
- /usr/include/c++/13/bits/parse_numbers.h \
+ /usr/include/c++/13/ratio /usr/include/c++/13/cstdint \
+ /usr/include/c++/13/ctime /usr/include/c++/13/bits/parse_numbers.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h \
  /usr/include/c++/13/bits/std_mutex.h \
  /usr/include/c++/13/bits/unique_lock.h /usr/include/c++/13/functional \
  /usr/include/c++/13/bits/std_function.h /usr/include/c++/13/array \
@@ -210,7 +200,8 @@ CMakeFiles/robotiq_controllers.dir/src/robotiq_activation_controller.cpp.o: \
  /usr/include/c++/13/bits/algorithmfwd.h \
  /usr/include/c++/13/bits/stl_heap.h \
  /usr/include/c++/13/bits/uniform_int_dist.h /usr/include/c++/13/mutex \
- /usr/include/c++/13/thread /usr/include/c++/13/bits/std_thread.h \
+ /usr/include/c++/13/stdexcept /usr/include/c++/13/thread \
+ /usr/include/c++/13/bits/std_thread.h \
  /usr/include/c++/13/bits/this_thread_sleep.h \
  /opt/ros/jazzy/include/rclcpp/rclcpp/clock.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/contexts/default_context.hpp \
@@ -241,8 +232,8 @@ CMakeFiles/robotiq_controllers.dir/src/robotiq_activation_controller.cpp.o: \
  /opt/ros/jazzy/include/rmw/rmw/types.h \
  /opt/ros/jazzy/include/rcutils/rcutils/logging.h \
  /opt/ros/jazzy/include/rcutils/rcutils/error_handling.h \
- /usr/include/assert.h /usr/include/c++/13/stdlib.h \
- /opt/ros/jazzy/include/rcutils/rcutils/snprintf.h \
+ /usr/include/assert.h /usr/include/c++/13/stdlib.h /usr/include/string.h \
+ /usr/include/strings.h /opt/ros/jazzy/include/rcutils/rcutils/snprintf.h \
  /opt/ros/jazzy/include/rcutils/rcutils/testing/fault_injection.h \
  /opt/ros/jazzy/include/rcutils/rcutils/time.h \
  /opt/ros/jazzy/include/rcutils/rcutils/types.h \
@@ -345,10 +336,16 @@ CMakeFiles/robotiq_controllers.dir/src/robotiq_activation_controller.cpp.o: \
  /opt/ros/jazzy/include/builtin_interfaces/builtin_interfaces/msg/detail/time__builder.hpp \
  /opt/ros/jazzy/include/builtin_interfaces/builtin_interfaces/msg/detail/time__traits.hpp \
  /usr/include/c++/13/sstream /usr/include/c++/13/istream \
- /usr/include/c++/13/ios /usr/include/c++/13/bits/basic_ios.h \
+ /usr/include/c++/13/ios /usr/include/c++/13/bits/ios_base.h \
+ /usr/include/c++/13/bits/locale_classes.h \
+ /usr/include/c++/13/bits/locale_classes.tcc \
+ /usr/include/c++/13/system_error /usr/include/c++/13/streambuf \
+ /usr/include/c++/13/bits/streambuf.tcc \
+ /usr/include/c++/13/bits/basic_ios.h \
  /usr/include/c++/13/bits/locale_facets.h /usr/include/c++/13/cwctype \
  /usr/include/wctype.h /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h \
+ /usr/include/c++/13/bits/streambuf_iterator.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h \
  /usr/include/c++/13/bits/locale_facets.tcc \
  /usr/include/c++/13/bits/basic_ios.tcc /usr/include/c++/13/ostream \
@@ -397,6 +394,8 @@ CMakeFiles/robotiq_controllers.dir/src/robotiq_activation_controller.cpp.o: \
  /opt/ros/jazzy/include/rclcpp/rclcpp/exceptions/exceptions.hpp \
  /opt/ros/jazzy/include/rcl/rcl/error_handling.h \
  /opt/ros/jazzy/include/rcpputils/rcpputils/join.hpp \
+ /usr/include/c++/13/cstring /usr/include/c++/13/iterator \
+ /usr/include/c++/13/bits/stream_iterator.h \
  /opt/ros/jazzy/include/rclcpp/rclcpp/parameter_value.hpp \
  /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/parameter_type.hpp \
  /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/parameter_type__struct.hpp \
@@ -431,7 +430,8 @@ CMakeFiles/robotiq_controllers.dir/src/robotiq_activation_controller.cpp.o: \
  /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__traits.hpp \
  /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/msg/detail/set_parameters_result__type_support.hpp \
  /opt/ros/jazzy/include/hardware_interface/hardware_interface/handle.hpp \
- /usr/include/fmt/compile.h /usr/include/c++/13/optional \
+ /usr/include/fmt/compile.h /usr/include/fmt/format.h \
+ /usr/include/fmt/core.h /usr/include/c++/13/optional \
  /usr/include/c++/13/shared_mutex \
  /opt/ros/jazzy/include/hardware_interface/hardware_interface/hardware_info.hpp \
  /usr/include/c++/13/variant \
@@ -693,7 +693,6 @@ CMakeFiles/robotiq_controllers.dir/src/robotiq_activation_controller.cpp.o: \
  /usr/include/c++/13/queue /usr/include/c++/13/bits/stl_queue.h \
  /opt/ros/jazzy/include/rclcpp/rclcpp/experimental/executors/events_executor/simple_events_queue.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/experimental/timers_manager.hpp \
- /opt/ros/jazzy/include/rclcpp/rclcpp/executors/events_cbg_executor/events_cbg_executor.hpp \
  /opt/ros/jazzy/include/rclcpp/rclcpp/parameter_client.hpp \
  /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/srv/describe_parameters.hpp \
  /opt/ros/jazzy/include/rcl_interfaces/rcl_interfaces/srv/detail/describe_parameters__struct.hpp \

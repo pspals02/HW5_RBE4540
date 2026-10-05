@@ -1,0 +1,4 @@
+/home/artrpelli/HW5_RBE4540/build/move_interfaces_merlab/rosidl_adapter/move_interfaces_merlab:srv/SendPose.idl
+/home/artrpelli/HW5_RBE4540/build/move_interfaces_merlab/rosidl_adapter/move_interfaces_merlab:srv/SendTwist.idl
+/home/artrpelli/HW5_RBE4540/build/move_interfaces_merlab/rosidl_adapter/move_interfaces_merlab:srv/SendJointTrajectory.idl
+/home/artrpelli/HW5_RBE4540/build/move_interfaces_merlab/rosidl_adapter/move_interfaces_merlab:srv/SendJointTrajectoryPoint.idl

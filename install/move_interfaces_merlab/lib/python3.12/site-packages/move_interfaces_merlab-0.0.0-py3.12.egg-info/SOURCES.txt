@@ -1,0 +1,11 @@
+setup.py
+move_interfaces_merlab/__init__.py
+move_interfaces_merlab.egg-info/PKG-INFO
+move_interfaces_merlab.egg-info/SOURCES.txt
+move_interfaces_merlab.egg-info/dependency_links.txt
+move_interfaces_merlab.egg-info/top_level.txt
+move_interfaces_merlab/srv/__init__.py
+move_interfaces_merlab/srv/_send_joint_trajectory.py
+move_interfaces_merlab/srv/_send_joint_trajectory_point.py
+move_interfaces_merlab/srv/_send_pose.py
+move_interfaces_merlab/srv/_send_twist.py

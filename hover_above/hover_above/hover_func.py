@@ -114,6 +114,23 @@ class HoverFunc(Node):
         self.pix_size=0.01 #mm
         self.err_decay = 0.2
 
+        self.curr_feats = np.concatenate([
+            self.curr_teal_center, self.curr_green_center,
+            self.curr_blue_center, self.curr_yellow_center
+        ]).reshape(8, 1)
+        self.log_feats = []
+        self.gain = 0.2
+        self.max_lin = 0.05     # m/s
+        self.max_ang = 0.2      # rad/s
+        self.des_feats = np.concatenate([   #moved here for visu servo
+            self._image_to_cam(self.des_teal_center),
+            self._image_to_cam(self.des_green_center),
+            self._image_to_cam(self.des_blue_center),
+            self._image_to_cam(self.des_yellow_center),
+        ]).reshape(8, 1)
+
+        self.frame_id = 0
+
         self.image_sub = self.create_subscription(
             Image,
             self.image_topic,
@@ -214,6 +231,7 @@ class HoverFunc(Node):
                 self.curr_yellow_center
             ]).reshape(8, 1)
 
+            '''
             desired_img_feats = np.concatenate([
                 self._image_to_cam(self.des_teal_center),
                 self._image_to_cam(self.des_green_center),
@@ -223,7 +241,6 @@ class HoverFunc(Node):
 
             print("curr feat:", curr_img_feats)
             
-
             
             feat_err=curr_img_feats-desired_img_feats
             print("feature error:", feat_err)
@@ -239,8 +256,8 @@ class HoverFunc(Node):
                 L_blue,
                 L_yellow
             ])
-            L_plus= np.pinv(L)
-            vc = self.err_decay  * L_plus * feat_err
+            L_plus= np.linalg.pinv(L)
+            vc = - self.err_decay  * L_plus * feat_err #decreasing error needs minus sign
             print("Output Velocity:", vc)
             filename = 'saved_ros2_image.png'
             cv2.imwrite(filename, cv_image)
@@ -248,21 +265,22 @@ class HoverFunc(Node):
             
             self.get_logger().info(f'Successfully saved image to {filename}')
             #rclpy.shutdown()
-    def _image_to_cam(self, point):
-        xc=((point[0]-self.cam_cent_x)*self.img_depth)/(self.focal/self.pix_size)
-        yc=((point[1]-self.cam_cent_y)*self.img_depth)/(self.focal/self.pix_size)
+            '''
+            self.frame_id += 1
+ 
         
-        return [xc, yc]
+    def _image_to_cam(self, point):
+        s = self.pix_size * 1e-3          # m/px
+        return [(point[0] - self.cam_cent_x) * s,
+                (point[1] - self.cam_cent_y) * s]
     
     def _image_jacob(self, point):
-        x = point[0]
-        y = point [1]
-        Z = self.img_depth
-        L = np.array([
-            [-1/Z, 0, x/Z, x*y, -(1+x**2), y],
-            [0, -1/Z, y/Z, 1+y**2, -x*y, -x]
-            ])
-        return L
+        x, y = point
+        f, Z = self.focal * 1e-3, self.img_depth
+        return np.array([
+            [-f/Z,  0,   x/Z,  x*y/f,        -(f + x**2/f),  y],
+            [ 0,  -f/Z,  y/Z,  f + y**2/f,   -x*y/f,        -x],]
+        )
         
     def _image_mask(self, cv_image):
         lower_teal = np.array([150, 150, 0])
@@ -287,6 +305,9 @@ class HoverFunc(Node):
         green_center = self._center_dot(green_mask)
         blue_center = self._center_dot(blue_mask)
         yellow_center = self._center_dot(yellow_mask)
+
+        if None in (teal_center, green_center, blue_center, yellow_center):
+            return
        
         
         mask_green = cv2.cvtColor(green_mask, cv2.COLOR_GRAY2BGR)
@@ -518,6 +539,7 @@ class HoverFunc(Node):
         
             
         self.get_logger().info('First Motion sequence complete')
+        return True
         
     def _execute_hover(self):
         self.get_logger().info(
@@ -527,22 +549,25 @@ class HoverFunc(Node):
         
         #if not self._move_home():
          #   return False
+
         if not self._first_move():
             return False
-            
+        self._visual_servo()
+
         pick_pose = self._make_pose(self.pick_position)
         #init_hover = self._make_pose(self.pick_position)
         lift_pose = self._offset_pose(pick_pose, self.lift_height)
     
-
+        '''
         motion_steps = (
             #(pick_hover, "Moving to pre-grasp hover"),
             (pick_pose, "Executing Hover"),
-            
         )
+            
         for pose, label in motion_steps:
             if not self._move_cartesian(pose, label):
                 return False
+        '''
 
         self._command_gripper(
             self.gripper_open_position,
@@ -633,6 +658,63 @@ class HoverFunc(Node):
         deadline = time.monotonic() + max(0.0, seconds)
         while rclpy.ok() and time.monotonic() < deadline:
             time.sleep(0.05)
+
+
+    def _visual_servo(self, tol=0.01, max_time=60.0, period=0.1):
+        self.log_feats = []
+        end = time.monotonic() + max_time
+
+        while rclpy.ok() and time.monotonic() < end:
+            if self.curr_feats is None:
+                time.sleep(0.05)
+                continue
+
+            s = self.curr_feats.copy()
+            e = s - self.des_feats                # 8x1
+            self.log_feats.append(s.flatten())
+
+            if np.linalg.norm(e) < tol:
+                self.get_logger().info("s = s*")
+                break 
+
+            L = np.vstack([self._image_jacob(s[i:i+2].flatten())
+                        for i in range(0, 8, 2)])      # 8x6
+            v = (-self.gain * (np.linalg.pinv(L) @ e)).flatten()   
+
+            v[:3] = np.clip(v[:3], -self.max_lin, self.max_lin)
+            v[3:] = np.clip(v[3:], -self.max_ang, self.max_ang)
+
+            if not self.set_ee_velocity(*v):
+                break
+            time.sleep(period)
+
+        self.set_ee_velocity() 
+        self._plot_trajectories()
+
+    def _plot_trajectories(self):
+        import matplotlib
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt
+
+        data = np.array(self.log_feats)
+        names = ["teal", "green", "blue", "yellow"]
+        f = self.focal * 1e-3
+        s = self.pix_size * 1e-3
+        fig, ax = plt.subplots()
+        for i, name in enumerate(names):
+            # convert back to pixels so the plot matches the image plane
+            u = data[:, 2*i] / s + self.cam_cent_x
+            v = data[:, 2*i+1] / s + self.cam_cent_y
+            ax.plot(u, v, label=name)
+            ax.plot(u[0], v[0], "o")
+            ax.plot(u[-1], v[-1], "x")
+        des = self.des_feats.flatten()
+        ax.set_xlabel("u (px)"); ax.set_ylabel("v (px)")
+        ax.invert_yaxis(); ax.legend(); ax.set_title("Feature trajectories")
+        fig.savefig("feature_trajectories.png", dpi=150)
+
+            
+
 
 
 def main(args=None):

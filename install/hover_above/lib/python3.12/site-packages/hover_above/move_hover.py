@@ -8,7 +8,8 @@ from cv_bridge import CvBridge
 from rclpy.node import Node
 from rclpy.qos import qos_profile_sensor_data
 from sensor_msgs.msg import Image
-
+import cv2
+import numpy as np
 
 class MoveHover(Node):
     def __init__(self):
@@ -16,6 +17,7 @@ class MoveHover(Node):
         self.cartesian_client = self.create_client(SendPose, '/cartesian_ref')
         self.ee_velocity_client = self.create_client(SendTwist, '/set_ee_velocity')
         self.bridge = CvBridge()
+        self.image_count=0
         self.palm_image = None  # Latest OpenCV image; None until one arrives.
         self.palm_camera_subscriber = self.create_subscription(
             Image,
@@ -27,7 +29,105 @@ class MoveHover(Node):
     def palm_image_callback(self, msg):
         """Convert the ROS image to an OpenCV image (BGR NumPy array)."""
         self.palm_image = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
-        # Add your image processing here.
+        
+        if self.image_count == 1:
+            self.get_logger().info(
+                f"Received first image: {msg.width}x{msg.height}, "
+                f"encoding={msg.encoding}"
+            )
+            self._image_mask(self.palm_image)
+            self._hough_circ_centers(self.palm_image)
+    
+            filename = 'saved_ros2_init_image.png'
+            cv2.imwrite(filename, self.palm_image)
+            
+            
+            self.get_logger().info(f'Successfully saved image to {filename}')
+            rclpy.shutdown()
+    def _image_mask(self, cv_image):
+        lower_teal = np.array([150, 150, 0])
+        upper_teal = np.array([255, 255, 100])
+
+        lower_green = np.array([0, 100, 0])
+        upper_green = np.array([80, 255, 80])
+
+        lower_blue = np.array([150, 0, 0])
+        upper_blue = np.array([255, 100, 100])
+
+        lower_yellow = np.array([0, 100, 100])
+        upper_yellow = np.array([50, 255, 255])
+        
+        
+        teal_mask = cv2.inRange(cv_image, lower_teal, upper_teal)
+        green_mask = cv2.inRange(cv_image, lower_green, upper_green)
+        blue_mask = cv2.inRange(cv_image, lower_blue, upper_blue)
+        yellow_mask = cv2.inRange(cv_image, lower_yellow, upper_yellow)
+        
+        teal_center = self._center_dot(teal_mask)
+        green_center = self._center_dot(green_mask)
+        blue_center = self._center_dot(blue_mask)
+        yellow_center = self._center_dot(yellow_mask)
+
+        print("teal:", teal_center)
+        print("Green:", green_center)
+        print("Blue:", blue_center)
+        print("Yellow:", yellow_center)
+        
+        mask_green = cv2.cvtColor(green_mask, cv2.COLOR_GRAY2BGR)
+        mask_teal = cv2.cvtColor(teal_mask, cv2.COLOR_GRAY2BGR)
+        mask_blue = cv2.cvtColor(blue_mask, cv2.COLOR_GRAY2BGR)
+        mask_yellow = cv2.cvtColor(yellow_mask, cv2.COLOR_GRAY2BGR)
+        
+        masked_image_teal = cv_image & mask_teal
+        masked_image_green = cv_image & mask_green
+        masked_image_blue = cv_image & mask_blue
+        masked_image_yellow = cv_image & mask_yellow
+        
+        filename_teal = 'saved_ros2_teal_image.png'
+        filename_blue = 'saved_ros2_blue_image.png'
+        filename_green = 'saved_ros2_green_image.png'
+        filename_yellow = 'saved_ros2_yellow_image.png'
+        
+        cv2.imwrite(filename_teal, masked_image_teal)
+        cv2.imwrite(filename_blue, masked_image_blue)
+        cv2.imwrite(filename_green, masked_image_green)
+        cv2.imwrite(filename_yellow, masked_image_yellow)
+        
+   
+        
+    def _center_dot(self,mask):
+
+        
+        y, x = np.where(mask > 0)
+
+        if len(x) == 0:
+            return None
+
+        # Average x and y coordinates
+        center_x = np.mean(x)
+        center_y = np.mean(y)
+
+        return center_x, center_y
+    def _hough_circ_centers(self,cv_image):
+        gray = cv2.cvtColor(cv_image, cv2.COLOR_BGR2GRAY)
+        circles = cv2.HoughCircles(
+            gray,
+            cv2.HOUGH_GRADIENT,
+            dp=1,
+            minDist=20,
+            param1=100,
+            param2=20,
+            minRadius=5,
+            maxRadius=50
+        )
+
+        result = cv_image.copy()
+        if circles is not None:
+            circles = np.round(circles[0, :]).astype(int)
+            for x, y, r in circles:
+                cv2.circle(result, (x, y), r, (255, 0, 255), 2)
+                print(f"Circle center: ({x}, {y})")
+        cv2.imwrite('init_hough_circ.png', result)
 
     def move_cartesian(self, x, y, z):
         """Move tool0 to a position in base_link (meters), pointing downward."""
@@ -106,14 +206,10 @@ class MoveHover(Node):
         if not rclpy.ok():
             return
 
-        # TODO: Implement your homework here. Edit or extend these two moves.
-        # Each call waits for the robot to finish before continuing.
-        # Images are received while the motion methods spin waiting for replies.
-        # To receive images outside those methods, call rclpy.spin_once(self).
-        if not self.move_cartesian(0.45, 0.0, 0.54):
+        if not self.move_cartesian(0.2, 0.42, 0.63):
             return
-        if not self.move_cartesian(0.45, -0.15, 0.54):
-            return
+        #if not self.move_cartesian(-0.45, -0.15, 0.63):
+         #   return
 
         self.get_logger().info('Waiting for /set_ee_velocity...')
         while rclpy.ok():
@@ -125,16 +221,20 @@ class MoveHover(Node):
         # Move along tool0's +X, then -X (about 9 cm each at 0.03 m/s).
         # Switch directly between velocities; send zero when the sequence ends.
         try:
-            if not self.move_ee_velocity(vx=0.03, duration=3.0):
+            if not self.move_ee_velocity( vy=0.03, vz=0.03, wx=-0.16, wz=0.03, duration=3.0):
                 return
-            if not self.move_ee_velocity(vx=-0.03, duration=3.0):
-                return
+            #if not self.move_ee_velocity( vy=0.03, vz=0.03, wy=0.008, wz=0.008, duration=3.0):
+             #   return
+        
         finally:
             # Also request a stop if a command fails or the user interrupts.
             # If ROS has shut down, the interface watchdog stops stale commands.
+            self.image_count+=1
             stopped = self.set_ee_velocity() if rclpy.ok() else False
         if not stopped:
             return
+        
+            
         self.get_logger().info('Motion sequence complete')
 
 

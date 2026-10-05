@@ -1,0 +1,339 @@
+[0.271s] Invoking command in '/home/artrpelli/HW5_RBE4540/build/move_interfaces_merlab': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/artrpelli/turtlebot3_ws/install/turtlebot3_teleop:/home/artrpelli/turtlebot3_ws/install/turtlebot3_example:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/artrpelli/HW5_RBE4540/move_interfaces_merlab -DCMAKE_INSTALL_PREFIX=/home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab
+[0.285s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.538s] -- Found geometry_msgs: 5.3.7 (/opt/ros/jazzy/share/geometry_msgs/cmake)
+[0.575s] -- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.585s] -- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.597s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.617s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.662s] -- Found trajectory_msgs: 5.3.7 (/opt/ros/jazzy/share/trajectory_msgs/cmake)
+[0.683s] -- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[0.695s] -- Found rosidl_adapter: 4.6.7 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[1.435s] -- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+[2.403s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.771s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.783s] -- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+[2.935s] -- Found PythonExtra: /usr/bin/python3  
+[3.473s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+[3.608s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[3.614s] -- Found ament_lint_auto: 0.17.5 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[3.655s] -- Added test 'lint_cmake' to check CMake code style
+[3.657s] -- Added test 'xmllint' to check XML markup files
+[3.660s] -- Configuring done (3.4s)
+[3.711s] -- Generating done (0.0s)
+[3.726s] -- Build files have been written to: /home/artrpelli/HW5_RBE4540/build/move_interfaces_merlab
+[3.737s] Invoked command in '/home/artrpelli/HW5_RBE4540/build/move_interfaces_merlab' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/artrpelli/turtlebot3_ws/install/turtlebot3_teleop:/home/artrpelli/turtlebot3_ws/install/turtlebot3_example:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/artrpelli/HW5_RBE4540/move_interfaces_merlab -DCMAKE_INSTALL_PREFIX=/home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab
+[3.739s] Invoking command in '/home/artrpelli/HW5_RBE4540/build/move_interfaces_merlab': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/artrpelli/turtlebot3_ws/install/turtlebot3_teleop:/home/artrpelli/turtlebot3_ws/install/turtlebot3_example:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/artrpelli/HW5_RBE4540/build/move_interfaces_merlab -- -j8 -l8
+[3.794s] [  3%] [34m[1mGenerating Rust code for ROS interfaces[0m
+[3.794s] [  3%] [34m[1mGenerating type hashes for ROS interfaces[0m
+[3.803s] [  3%] Built target ament_cmake_python_copy_move_interfaces_merlab
+[4.057s] running egg_info
+[4.057s] creating move_interfaces_merlab.egg-info
+[4.059s] [  3%] Built target move_interfaces_merlab__rosidl_generator_type_description
+[4.074s] [  4%] [34m[1mGenerating C code for ROS interfaces[0m
+[4.085s] writing move_interfaces_merlab.egg-info/PKG-INFO
+[4.086s] writing dependency_links to move_interfaces_merlab.egg-info/dependency_links.txt
+[4.086s] writing top-level names to move_interfaces_merlab.egg-info/top_level.txt
+[4.086s] writing manifest file 'move_interfaces_merlab.egg-info/SOURCES.txt'
+[4.086s] [  6%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[4.095s] [  6%] Built target move_interfaces_merlab__rs
+[4.157s] reading manifest file 'move_interfaces_merlab.egg-info/SOURCES.txt'
+[4.158s] writing manifest file 'move_interfaces_merlab.egg-info/SOURCES.txt'
+[4.190s] [  6%] Built target ament_cmake_python_build_move_interfaces_merlab_egg
+[4.660s] [  6%] Built target move_interfaces_merlab__cpp
+[4.747s] [  9%] [32mBuilding C object CMakeFiles/move_interfaces_merlab__rosidl_generator_c.dir/rosidl_generator_c/move_interfaces_merlab/srv/detail/send_pose__type_support.c.o[0m
+[4.748s] [  9%] [32mBuilding C object CMakeFiles/move_interfaces_merlab__rosidl_generator_c.dir/rosidl_generator_c/move_interfaces_merlab/srv/detail/send_twist__functions.c.o[0m
+[4.748s] [ 10%] [32mBuilding C object CMakeFiles/move_interfaces_merlab__rosidl_generator_c.dir/rosidl_generator_c/move_interfaces_merlab/srv/detail/send_pose__description.c.o[0m
+[4.748s] [ 13%] [32mBuilding C object CMakeFiles/move_interfaces_merlab__rosidl_generator_c.dir/rosidl_generator_c/move_interfaces_merlab/srv/detail/send_joint_trajectory__description.c.o[0m
+[4.748s] [ 13%] [32mBuilding C object CMakeFiles/move_interfaces_merlab__rosidl_generator_c.dir/rosidl_generator_c/move_interfaces_merlab/srv/detail/send_twist__type_support.c.o[0m
+[4.751s] [ 15%] [32mBuilding C object CMakeFiles/move_interfaces_merlab__rosidl_generator_c.dir/rosidl_generator_c/move_interfaces_merlab/srv/detail/send_pose__functions.c.o[0m
+[4.752s] [ 16%] [32mBuilding C object CMakeFiles/move_interfaces_merlab__rosidl_generator_c.dir/rosidl_generator_c/move_interfaces_merlab/srv/detail/send_twist__description.c.o[0m
+[4.753s] [ 18%] [32mBuilding C object CMakeFiles/move_interfaces_merlab__rosidl_generator_c.dir/rosidl_generator_c/move_interfaces_merlab/srv/detail/send_joint_trajectory__functions.c.o[0m
+[4.825s] [ 20%] [32mBuilding C object CMakeFiles/move_interfaces_merlab__rosidl_generator_c.dir/rosidl_generator_c/move_interfaces_merlab/srv/detail/send_joint_trajectory__type_support.c.o[0m
+[4.825s] [ 21%] [32mBuilding C object CMakeFiles/move_interfaces_merlab__rosidl_generator_c.dir/rosidl_generator_c/move_interfaces_merlab/srv/detail/send_joint_trajectory_point__description.c.o[0m
+[4.832s] [ 23%] [32mBuilding C object CMakeFiles/move_interfaces_merlab__rosidl_generator_c.dir/rosidl_generator_c/move_interfaces_merlab/srv/detail/send_joint_trajectory_point__functions.c.o[0m
+[4.838s] [ 24%] [32mBuilding C object CMakeFiles/move_interfaces_merlab__rosidl_generator_c.dir/rosidl_generator_c/move_interfaces_merlab/srv/detail/send_joint_trajectory_point__type_support.c.o[0m
+[4.941s] [ 26%] [32m[1mLinking C shared library libmove_interfaces_merlab__rosidl_generator_c.so[0m
+[4.988s] [ 26%] Built target move_interfaces_merlab__rosidl_generator_c
+[5.000s] [ 27%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[5.002s] [ 30%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[5.002s] [ 30%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[5.002s] [ 32%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[5.004s] [ 33%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[5.005s] [ 35%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[5.639s] [ 36%] [32mBuilding CXX object CMakeFiles/move_interfaces_merlab__rosidl_typesupport_c.dir/rosidl_typesupport_c/move_interfaces_merlab/srv/send_twist__type_support.cpp.o[0m
+[5.649s] [ 38%] [32mBuilding CXX object CMakeFiles/move_interfaces_merlab__rosidl_typesupport_c.dir/rosidl_typesupport_c/move_interfaces_merlab/srv/send_pose__type_support.cpp.o[0m
+[5.659s] [ 40%] [32mBuilding CXX object CMakeFiles/move_interfaces_merlab__rosidl_typesupport_c.dir/rosidl_typesupport_c/move_interfaces_merlab/srv/send_joint_trajectory__type_support.cpp.o[0m
+[5.673s] [ 41%] [32mBuilding CXX object CMakeFiles/move_interfaces_merlab__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/move_interfaces_merlab/srv/send_pose__type_support.cpp.o[0m
+[5.772s] [ 43%] [32mBuilding CXX object CMakeFiles/move_interfaces_merlab__rosidl_typesupport_c.dir/rosidl_typesupport_c/move_interfaces_merlab/srv/send_joint_trajectory_point__type_support.cpp.o[0m
+[5.798s] [ 44%] [32mBuilding CXX object CMakeFiles/move_interfaces_merlab__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/move_interfaces_merlab/srv/send_twist__type_support.cpp.o[0m
+[5.804s] [ 46%] [32mBuilding CXX object CMakeFiles/move_interfaces_merlab__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/move_interfaces_merlab/srv/send_joint_trajectory__type_support.cpp.o[0m
+[5.890s] [ 47%] [32m[1mLinking CXX shared library libmove_interfaces_merlab__rosidl_typesupport_c.so[0m
+[5.898s] [ 49%] [32mBuilding CXX object CMakeFiles/move_interfaces_merlab__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/move_interfaces_merlab/srv/detail/send_pose__type_support.cpp.o[0m
+[5.999s] [ 50%] [32mBuilding C object CMakeFiles/move_interfaces_merlab__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/move_interfaces_merlab/srv/detail/send_pose__type_support.c.o[0m
+[6.010s] [ 50%] Built target move_interfaces_merlab__rosidl_typesupport_c
+[6.035s] [ 52%] [32mBuilding C object CMakeFiles/move_interfaces_merlab__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/move_interfaces_merlab/srv/detail/send_twist__type_support.c.o[0m
+[6.115s] [ 53%] [32mBuilding CXX object CMakeFiles/move_interfaces_merlab__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/move_interfaces_merlab/srv/detail/send_pose__type_support_c.cpp.o[0m
+[6.140s] [ 55%] [32mBuilding CXX object CMakeFiles/move_interfaces_merlab__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/move_interfaces_merlab/srv/detail/dds_fastrtps/send_pose__type_support.cpp.o[0m
+[6.160s] [ 56%] [32mBuilding CXX object CMakeFiles/move_interfaces_merlab__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/move_interfaces_merlab/srv/send_joint_trajectory_point__type_support.cpp.o[0m
+[6.163s] [ 58%] [32mBuilding C object CMakeFiles/move_interfaces_merlab__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/move_interfaces_merlab/srv/detail/send_joint_trajectory__type_support.c.o[0m
+[6.287s] [ 60%] [32mBuilding C object CMakeFiles/move_interfaces_merlab__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/move_interfaces_merlab/srv/detail/send_joint_trajectory_point__type_support.c.o[0m
+[6.345s] [ 61%] [32mBuilding CXX object CMakeFiles/move_interfaces_merlab__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/move_interfaces_merlab/srv/detail/send_twist__type_support.cpp.o[0m
+[6.398s] [ 63%] [32m[1mLinking C shared library libmove_interfaces_merlab__rosidl_typesupport_introspection_c.so[0m
+[6.524s] [ 63%] Built target move_interfaces_merlab__rosidl_typesupport_introspection_c
+[6.560s] [ 64%] [32mBuilding CXX object CMakeFiles/move_interfaces_merlab__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/move_interfaces_merlab/srv/detail/send_twist__type_support_c.cpp.o[0m
+[6.586s] [ 66%] [32mBuilding CXX object CMakeFiles/move_interfaces_merlab__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/move_interfaces_merlab/srv/detail/dds_fastrtps/send_twist__type_support.cpp.o[0m
+[6.611s] [ 67%] [32mBuilding CXX object CMakeFiles/move_interfaces_merlab__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/move_interfaces_merlab/srv/detail/send_joint_trajectory__type_support.cpp.o[0m
+[6.677s] [ 69%] [32mBuilding CXX object CMakeFiles/move_interfaces_merlab__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/move_interfaces_merlab/srv/detail/send_joint_trajectory__type_support_c.cpp.o[0m
+[6.873s] [ 70%] [32m[1mLinking CXX shared library libmove_interfaces_merlab__rosidl_typesupport_cpp.so[0m
+[7.043s] [ 72%] [32mBuilding CXX object CMakeFiles/move_interfaces_merlab__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/move_interfaces_merlab/srv/detail/dds_fastrtps/send_joint_trajectory__type_support.cpp.o[0m
+[7.053s] [ 72%] Built target move_interfaces_merlab__rosidl_typesupport_cpp
+[7.068s] [ 73%] [32mBuilding CXX object CMakeFiles/move_interfaces_merlab__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/move_interfaces_merlab/srv/detail/send_joint_trajectory_point__type_support_c.cpp.o[0m
+[7.148s] [ 75%] [32mBuilding CXX object CMakeFiles/move_interfaces_merlab__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/move_interfaces_merlab/srv/detail/send_joint_trajectory_point__type_support.cpp.o[0m
+[7.248s] [ 76%] [32mBuilding CXX object CMakeFiles/move_interfaces_merlab__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/move_interfaces_merlab/srv/detail/dds_fastrtps/send_joint_trajectory_point__type_support.cpp.o[0m
+[7.782s] [ 78%] [32m[1mLinking CXX shared library libmove_interfaces_merlab__rosidl_typesupport_introspection_cpp.so[0m
+[7.867s] [ 80%] [32m[1mLinking CXX shared library libmove_interfaces_merlab__rosidl_typesupport_fastrtps_c.so[0m
+[7.870s] [ 80%] Built target move_interfaces_merlab__rosidl_typesupport_introspection_cpp
+[7.948s] [ 80%] Built target move_interfaces_merlab__rosidl_typesupport_fastrtps_c
+[8.058s] [ 81%] [32m[1mLinking CXX shared library libmove_interfaces_merlab__rosidl_typesupport_fastrtps_cpp.so[0m
+[8.181s] [ 81%] Built target move_interfaces_merlab__rosidl_typesupport_fastrtps_cpp
+[8.213s] [ 81%] Built target move_interfaces_merlab
+[8.250s] [ 83%] [34m[1mGenerating Python code for ROS interfaces[0m
+[9.109s] [ 83%] Built target move_interfaces_merlab__py
+[9.129s] [ 89%] [32mBuilding C object CMakeFiles/move_interfaces_merlab__rosidl_generator_py.dir/rosidl_generator_py/move_interfaces_merlab/srv/_send_twist_s.c.o[0m
+[9.129s] [ 89%] [32mBuilding C object CMakeFiles/move_interfaces_merlab__rosidl_generator_py.dir/rosidl_generator_py/move_interfaces_merlab/srv/_send_joint_trajectory_s.c.o[0m
+[9.130s] [ 89%] [32mBuilding C object CMakeFiles/move_interfaces_merlab__rosidl_generator_py.dir/rosidl_generator_py/move_interfaces_merlab/srv/_send_joint_trajectory_point_s.c.o[0m
+[9.130s] [ 89%] [32mBuilding C object CMakeFiles/move_interfaces_merlab__rosidl_generator_py.dir/rosidl_generator_py/move_interfaces_merlab/srv/_send_pose_s.c.o[0m
+[9.334s] [ 90%] [32m[1mLinking C shared library libmove_interfaces_merlab__rosidl_generator_py.so[0m
+[9.411s] [ 90%] Built target move_interfaces_merlab__rosidl_generator_py
+[9.447s] [ 93%] [32mBuilding C object CMakeFiles/move_interfaces_merlab_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/move_interfaces_merlab/_move_interfaces_merlab_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[9.448s] [ 93%] [32mBuilding C object CMakeFiles/move_interfaces_merlab_s__rosidl_typesupport_c.dir/rosidl_generator_py/move_interfaces_merlab/_move_interfaces_merlab_s.ep.rosidl_typesupport_c.c.o[0m
+[9.451s] [ 95%] [32mBuilding C object CMakeFiles/move_interfaces_merlab_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/move_interfaces_merlab/_move_interfaces_merlab_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[9.602s] [100%] [32m[1mLinking C shared module rosidl_generator_py/move_interfaces_merlab/move_interfaces_merlab_s__rosidl_typesupport_fastrtps_c.so[0m
+[9.602s] [100%] [32m[1mLinking C shared module rosidl_generator_py/move_interfaces_merlab/move_interfaces_merlab_s__rosidl_typesupport_introspection_c.so[0m
+[9.602s] [100%] [32m[1mLinking C shared module rosidl_generator_py/move_interfaces_merlab/move_interfaces_merlab_s__rosidl_typesupport_c.so[0m
+[9.635s] [100%] Built target move_interfaces_merlab_s__rosidl_typesupport_c
+[9.635s] [100%] Built target move_interfaces_merlab_s__rosidl_typesupport_fastrtps_c
+[9.635s] [100%] Built target move_interfaces_merlab_s__rosidl_typesupport_introspection_c
+[9.647s] Invoked command in '/home/artrpelli/HW5_RBE4540/build/move_interfaces_merlab' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/artrpelli/turtlebot3_ws/install/turtlebot3_teleop:/home/artrpelli/turtlebot3_ws/install/turtlebot3_example:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/artrpelli/HW5_RBE4540/build/move_interfaces_merlab -- -j8 -l8
+[9.649s] Invoking command in '/home/artrpelli/HW5_RBE4540/build/move_interfaces_merlab': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/artrpelli/turtlebot3_ws/install/turtlebot3_teleop:/home/artrpelli/turtlebot3_ws/install/turtlebot3_example:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/artrpelli/HW5_RBE4540/build/move_interfaces_merlab
+[9.659s] -- Install configuration: ""
+[9.660s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/ament_index/resource_index/rosidl_interfaces/move_interfaces_merlab
+[9.660s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/srv/SendPose.json
+[9.660s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/srv/SendTwist.json
+[9.660s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/srv/SendJointTrajectory.json
+[9.660s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/srv/SendJointTrajectoryPoint.json
+[9.660s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab
+[9.660s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv
+[9.660s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail
+[9.661s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_pose__type_support.c
+[9.661s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_joint_trajectory_point__struct.h
+[9.661s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_twist__description.c
+[9.661s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_pose__functions.c
+[9.661s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_pose__struct.h
+[9.661s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_pose__type_support.h
+[9.661s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_joint_trajectory__description.c
+[9.661s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_joint_trajectory_point__description.c
+[9.662s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_joint_trajectory__type_support.h
+[9.662s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_joint_trajectory_point__type_support.h
+[9.662s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_joint_trajectory__struct.h
+[9.662s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_twist__functions.h
+[9.662s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_joint_trajectory_point__type_support.c
+[9.662s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_twist__type_support.c
+[9.663s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_joint_trajectory_point__functions.c
+[9.663s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_joint_trajectory__functions.h
+[9.663s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_pose__description.c
+[9.663s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_twist__functions.c
+[9.663s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_pose__functions.h
+[9.663s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_twist__struct.h
+[9.664s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_joint_trajectory__type_support.c
+[9.664s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_twist__type_support.h
+[9.664s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_joint_trajectory_point__functions.h
+[9.664s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_joint_trajectory__functions.c
+[9.664s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/send_twist.h
+[9.664s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/send_joint_trajectory.h
+[9.664s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/send_pose.h
+[9.665s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/send_joint_trajectory_point.h
+[9.665s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/msg
+[9.665s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/msg/rosidl_generator_c__visibility_control.h
+[9.665s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/environment/library_path.sh
+[9.665s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/environment/library_path.dsv
+[9.665s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/libmove_interfaces_merlab__rosidl_generator_c.so
+[9.665s] -- Set non-toolchain portion of runtime path of "/home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/libmove_interfaces_merlab__rosidl_generator_c.so" to ""
+[9.666s] -- Up-to-date: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab
+[9.666s] -- Up-to-date: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv
+[9.666s] -- Up-to-date: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail
+[9.666s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_joint_trajectory_point__rosidl_typesupport_fastrtps_c.h
+[9.666s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_pose__rosidl_typesupport_fastrtps_c.h
+[9.666s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_joint_trajectory__rosidl_typesupport_fastrtps_c.h
+[9.667s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_twist__rosidl_typesupport_fastrtps_c.h
+[9.667s] -- Up-to-date: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/msg
+[9.667s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[9.667s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/libmove_interfaces_merlab__rosidl_typesupport_fastrtps_c.so
+[9.667s] -- Set non-toolchain portion of runtime path of "/home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/libmove_interfaces_merlab__rosidl_typesupport_fastrtps_c.so" to ""
+[9.667s] -- Up-to-date: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab
+[9.667s] -- Up-to-date: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv
+[9.668s] -- Up-to-date: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail
+[9.668s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_twist__type_support.hpp
+[9.668s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_joint_trajectory_point__builder.hpp
+[9.668s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_joint_trajectory__builder.hpp
+[9.668s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_pose__traits.hpp
+[9.668s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_twist__builder.hpp
+[9.669s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_joint_trajectory_point__struct.hpp
+[9.669s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_joint_trajectory_point__traits.hpp
+[9.669s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_joint_trajectory_point__type_support.hpp
+[9.669s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_pose__type_support.hpp
+[9.669s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_twist__traits.hpp
+[9.669s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_twist__struct.hpp
+[9.670s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_pose__struct.hpp
+[9.670s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_joint_trajectory__type_support.hpp
+[9.670s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_joint_trajectory__struct.hpp
+[9.670s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_joint_trajectory__traits.hpp
+[9.670s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_pose__builder.hpp
+[9.670s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/send_joint_trajectory.hpp
+[9.670s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/send_pose.hpp
+[9.671s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/send_joint_trajectory_point.hpp
+[9.671s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/send_twist.hpp
+[9.671s] -- Up-to-date: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/msg
+[9.671s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/msg/rosidl_generator_cpp__visibility_control.hpp
+[9.671s] -- Up-to-date: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab
+[9.671s] -- Up-to-date: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv
+[9.671s] -- Up-to-date: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail
+[9.672s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/dds_fastrtps
+[9.672s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_joint_trajectory_point__rosidl_typesupport_fastrtps_cpp.hpp
+[9.672s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_pose__rosidl_typesupport_fastrtps_cpp.hpp
+[9.672s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_twist__rosidl_typesupport_fastrtps_cpp.hpp
+[9.672s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_joint_trajectory__rosidl_typesupport_fastrtps_cpp.hpp
+[9.672s] -- Up-to-date: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/msg
+[9.673s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[9.673s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/libmove_interfaces_merlab__rosidl_typesupport_fastrtps_cpp.so
+[9.673s] -- Set non-toolchain portion of runtime path of "/home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/libmove_interfaces_merlab__rosidl_typesupport_fastrtps_cpp.so" to ""
+[9.673s] -- Up-to-date: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab
+[9.673s] -- Up-to-date: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv
+[9.673s] -- Up-to-date: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail
+[9.674s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_pose__type_support.c
+[9.674s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_joint_trajectory__rosidl_typesupport_introspection_c.h
+[9.674s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_twist__rosidl_typesupport_introspection_c.h
+[9.674s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_joint_trajectory_point__type_support.c
+[9.674s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_pose__rosidl_typesupport_introspection_c.h
+[9.674s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_twist__type_support.c
+[9.674s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_joint_trajectory__type_support.c
+[9.675s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_joint_trajectory_point__rosidl_typesupport_introspection_c.h
+[9.675s] -- Up-to-date: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/msg
+[9.675s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[9.675s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/libmove_interfaces_merlab__rosidl_typesupport_introspection_c.so
+[9.675s] -- Set non-toolchain portion of runtime path of "/home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/libmove_interfaces_merlab__rosidl_typesupport_introspection_c.so" to ""
+[9.675s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/libmove_interfaces_merlab__rosidl_typesupport_c.so
+[9.675s] -- Set non-toolchain portion of runtime path of "/home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/libmove_interfaces_merlab__rosidl_typesupport_c.so" to ""
+[9.676s] -- Up-to-date: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab
+[9.676s] -- Up-to-date: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv
+[9.676s] -- Up-to-date: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail
+[9.676s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_pose__rosidl_typesupport_introspection_cpp.hpp
+[9.676s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_joint_trajectory__type_support.cpp
+[9.676s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_joint_trajectory__rosidl_typesupport_introspection_cpp.hpp
+[9.676s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_twist__rosidl_typesupport_introspection_cpp.hpp
+[9.677s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_twist__type_support.cpp
+[9.677s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_joint_trajectory_point__type_support.cpp
+[9.677s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_joint_trajectory_point__rosidl_typesupport_introspection_cpp.hpp
+[9.677s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/include/move_interfaces_merlab/move_interfaces_merlab/srv/detail/send_pose__type_support.cpp
+[9.677s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/libmove_interfaces_merlab__rosidl_typesupport_introspection_cpp.so
+[9.677s] -- Set non-toolchain portion of runtime path of "/home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/libmove_interfaces_merlab__rosidl_typesupport_introspection_cpp.so" to ""
+[9.677s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/libmove_interfaces_merlab__rosidl_typesupport_cpp.so
+[9.678s] -- Set non-toolchain portion of runtime path of "/home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/libmove_interfaces_merlab__rosidl_typesupport_cpp.so" to ""
+[9.678s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/environment/pythonpath.sh
+[9.678s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/environment/pythonpath.dsv
+[9.679s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab-0.0.0-py3.12.egg-info
+[9.679s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab-0.0.0-py3.12.egg-info/dependency_links.txt
+[9.679s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab-0.0.0-py3.12.egg-info/SOURCES.txt
+[9.679s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab-0.0.0-py3.12.egg-info/PKG-INFO
+[9.679s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab-0.0.0-py3.12.egg-info/top_level.txt
+[9.679s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab
+[9.680s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab/_move_interfaces_merlab_s.ep.rosidl_typesupport_fastrtps_c.c
+[9.680s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab/srv
+[9.680s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab/srv/_send_joint_trajectory.py
+[9.680s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab/srv/_send_joint_trajectory_point.py
+[9.680s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab/srv/_send_twist_s.c
+[9.680s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab/srv/_send_pose.py
+[9.680s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab/srv/_send_joint_trajectory_s.c
+[9.681s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab/srv/_send_joint_trajectory_point_s.c
+[9.681s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab/srv/_send_twist.py
+[9.681s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab/srv/__init__.py
+[9.681s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab/srv/_send_pose_s.c
+[9.681s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab/move_interfaces_merlab_s__rosidl_typesupport_introspection_c.so
+[9.681s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab/_move_interfaces_merlab_s.ep.rosidl_typesupport_introspection_c.c
+[9.682s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab/_move_interfaces_merlab_s.ep.rosidl_typesupport_c.c
+[9.682s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab/move_interfaces_merlab_s__rosidl_typesupport_fastrtps_c.so
+[9.682s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab/move_interfaces_merlab_s__rosidl_typesupport_c.so
+[9.682s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab/__init__.py
+[9.751s] Listing '/home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab'...
+[9.751s] Compiling '/home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab/__init__.py'...
+[9.751s] Listing '/home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab/srv'...
+[9.751s] Compiling '/home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab/srv/__init__.py'...
+[9.751s] Compiling '/home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab/srv/_send_joint_trajectory.py'...
+[9.752s] Compiling '/home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab/srv/_send_joint_trajectory_point.py'...
+[9.752s] Compiling '/home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab/srv/_send_pose.py'...
+[9.752s] Compiling '/home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab/srv/_send_twist.py'...
+[9.758s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab/move_interfaces_merlab_s__rosidl_typesupport_fastrtps_c.so
+[9.758s] -- Set non-toolchain portion of runtime path of "/home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab/move_interfaces_merlab_s__rosidl_typesupport_fastrtps_c.so" to ""
+[9.759s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab/move_interfaces_merlab_s__rosidl_typesupport_introspection_c.so
+[9.759s] -- Set non-toolchain portion of runtime path of "/home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab/move_interfaces_merlab_s__rosidl_typesupport_introspection_c.so" to ""
+[9.759s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab/move_interfaces_merlab_s__rosidl_typesupport_c.so
+[9.759s] -- Set non-toolchain portion of runtime path of "/home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/python3.12/site-packages/move_interfaces_merlab/move_interfaces_merlab_s__rosidl_typesupport_c.so" to ""
+[9.759s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/libmove_interfaces_merlab__rosidl_generator_py.so
+[9.760s] -- Set non-toolchain portion of runtime path of "/home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/lib/libmove_interfaces_merlab__rosidl_generator_py.so" to ""
+[9.760s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/ament_index/resource_index/rust_packages/move_interfaces_merlab
+[9.760s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/rust
+[9.760s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/rust/Cargo.toml
+[9.760s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/rust/src
+[9.760s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/rust/src/lib.rs
+[9.760s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/rust/src/srv
+[9.760s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/rust/src/srv/rmw.rs
+[9.760s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/rust/src/srv.rs
+[9.760s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/rust/build.rs
+[9.760s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/srv/SendPose.idl
+[9.761s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/srv/SendTwist.idl
+[9.761s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/srv/SendJointTrajectory.idl
+[9.761s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/srv/SendJointTrajectoryPoint.idl
+[9.761s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/srv/SendPose.srv
+[9.761s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/srv/SendTwist.srv
+[9.761s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/srv/SendJointTrajectory.srv
+[9.761s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/srv/SendJointTrajectoryPoint.srv
+[9.761s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/ament_index/resource_index/package_run_dependencies/move_interfaces_merlab
+[9.761s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/ament_index/resource_index/parent_prefix_path/move_interfaces_merlab
+[9.761s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/environment/ament_prefix_path.sh
+[9.761s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/environment/ament_prefix_path.dsv
+[9.761s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/environment/path.sh
+[9.761s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/environment/path.dsv
+[9.762s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/local_setup.bash
+[9.762s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/local_setup.sh
+[9.762s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/local_setup.zsh
+[9.762s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/local_setup.dsv
+[9.762s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/package.dsv
+[9.762s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/ament_index/resource_index/packages/move_interfaces_merlab
+[9.762s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/cmake/export_move_interfaces_merlab__rosidl_generator_cExport.cmake
+[9.762s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/cmake/export_move_interfaces_merlab__rosidl_generator_cExport-noconfig.cmake
+[9.762s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/cmake/export_move_interfaces_merlab__rosidl_typesupport_fastrtps_cExport.cmake
+[9.762s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/cmake/export_move_interfaces_merlab__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[9.762s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/cmake/export_move_interfaces_merlab__rosidl_generator_cppExport.cmake
+[9.763s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/cmake/export_move_interfaces_merlab__rosidl_typesupport_fastrtps_cppExport.cmake
+[9.763s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/cmake/export_move_interfaces_merlab__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[9.763s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/cmake/move_interfaces_merlab__rosidl_typesupport_introspection_cExport.cmake
+[9.763s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/cmake/move_interfaces_merlab__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[9.763s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/cmake/move_interfaces_merlab__rosidl_typesupport_cExport.cmake
+[9.763s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/cmake/move_interfaces_merlab__rosidl_typesupport_cExport-noconfig.cmake
+[9.763s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/cmake/move_interfaces_merlab__rosidl_typesupport_introspection_cppExport.cmake
+[9.763s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/cmake/move_interfaces_merlab__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[9.763s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/cmake/move_interfaces_merlab__rosidl_typesupport_cppExport.cmake
+[9.763s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/cmake/move_interfaces_merlab__rosidl_typesupport_cppExport-noconfig.cmake
+[9.764s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/cmake/export_move_interfaces_merlab__rosidl_generator_pyExport.cmake
+[9.764s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/cmake/export_move_interfaces_merlab__rosidl_generator_pyExport-noconfig.cmake
+[9.764s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/cmake/rosidl_cmake-extras.cmake
+[9.764s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/cmake/ament_cmake_export_dependencies-extras.cmake
+[9.764s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/cmake/ament_cmake_export_include_directories-extras.cmake
+[9.764s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/cmake/ament_cmake_export_libraries-extras.cmake
+[9.764s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/cmake/ament_cmake_export_targets-extras.cmake
+[9.764s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[9.764s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[9.764s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/cmake/move_interfaces_merlabConfig.cmake
+[9.764s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/cmake/move_interfaces_merlabConfig-version.cmake
+[9.765s] -- Installing: /home/artrpelli/HW5_RBE4540/install/move_interfaces_merlab/share/move_interfaces_merlab/package.xml
+[9.768s] Invoked command in '/home/artrpelli/HW5_RBE4540/build/move_interfaces_merlab' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/artrpelli/turtlebot3_ws/install/turtlebot3_teleop:/home/artrpelli/turtlebot3_ws/install/turtlebot3_example:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/artrpelli/HW5_RBE4540/build/move_interfaces_merlab
