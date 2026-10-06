@@ -1,8 +1,0 @@
-srv/SendJointTrajectory.idl
-srv/SendJointTrajectory.srv
-srv/SendJointTrajectoryPoint.idl
-srv/SendJointTrajectoryPoint.srv
-srv/SendPose.idl
-srv/SendPose.srv
-srv/SendTwist.idl
-srv/SendTwist.srv

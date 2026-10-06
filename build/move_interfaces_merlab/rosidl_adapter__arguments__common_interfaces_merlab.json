@@ -1,9 +1,0 @@
-{
-  "package_name": "common_interfaces_merlab",
-  "non_idl_tuples": [
-    "/home/artrpelli/HW5_RBE4540/move_interfaces_merlab:srv/SendPose.srv",
-    "/home/artrpelli/HW5_RBE4540/move_interfaces_merlab:srv/SendTwist.srv",
-    "/home/artrpelli/HW5_RBE4540/move_interfaces_merlab:srv/SendJointTrajectory.srv",
-    "/home/artrpelli/HW5_RBE4540/move_interfaces_merlab:srv/SendJointTrajectoryPoint.srv"
-  ]
-}
