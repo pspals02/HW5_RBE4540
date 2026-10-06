@@ -1,4 +1,0 @@
-[console_scripts]
-hover = hover_above.hover_func:main
-move = hover_above.move_hover:main
-move_interface = hover_above.ur_move_simple_interface:main
