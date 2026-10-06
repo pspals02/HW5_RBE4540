@@ -64,6 +64,7 @@ class HoverFunc(Node):
         self.des_teal_center=[370.0,290.0]
         self.des_green_center=[272.0,192.0]
         
+
         self.declare_parameter("hover_height", 0.10)
         self.declare_parameter("lift_height", 0.20)
         self.declare_parameter("tool_qx", 1.0)
@@ -114,14 +115,14 @@ class HoverFunc(Node):
         self.pix_size=0.01 #mm
         self.err_decay = 0.2
 
-        self.curr_feats = np.concatenate([
+        self.curr_img_feats = np.concatenate([
             self.curr_teal_center, self.curr_green_center,
             self.curr_blue_center, self.curr_yellow_center
         ]).reshape(8, 1)
         self.log_feats = []
-        self.gain = 0.2
+        self.gain = 0.08
         self.max_lin = 0.05     # m/s
-        self.max_ang = 0.2      # rad/s
+        self.max_ang = 0.1      # rad/s
         self.des_feats = np.concatenate([   #moved here for visu servo
             self._image_to_cam(self.des_teal_center),
             self._image_to_cam(self.des_green_center),
@@ -213,7 +214,7 @@ class HoverFunc(Node):
     def _image_callback(self, message):
         self.latest_image = message
         
-        if self.image_count >= 1:
+        if self.image_count >= 0:
             self.get_logger().info(
                 f"Received first image: {message.width}x{message.height}, "
                 f"encoding={message.encoding}"
@@ -224,7 +225,7 @@ class HoverFunc(Node):
             #self._hough_circ_centers(cv_image)
             
             print("Calc feature err...")
-            curr_img_feats = np.concatenate([
+            self.curr_img_feats = np.concatenate([
                 self.curr_teal_center,
                 self.curr_green_center,
                 self.curr_blue_center,
@@ -271,12 +272,14 @@ class HoverFunc(Node):
         
     def _image_to_cam(self, point):
         s = self.pix_size * 1e-3          # m/px
-        return [(point[0] - self.cam_cent_x) * s,
-                (point[1] - self.cam_cent_y) * s]
+        
+        return [(point[0] - self.cam_cent_x) * (self.img_depth/(self.focal/self.pix_size)),
+                (point[1] - self.cam_cent_y) * (self.img_depth/(self.focal/self.pix_size))]
+                #(point[1] - self.cam_cent_y) * s]
     
     def _image_jacob(self, point):
         x, y = point
-        f, Z = self.focal * 1e-3, self.img_depth
+        f, Z = (self.focal * 1e-3), self.img_depth
         return np.array([
             [-f/Z,  0,   x/Z,  x*y/f,        -(f + x**2/f),  y],
             [ 0,  -f/Z,  y/Z,  f + y**2/f,   -x*y/f,        -x],]
@@ -320,18 +323,18 @@ class HoverFunc(Node):
         masked_image_blue = cv_image & mask_blue
         masked_image_yellow = cv_image & mask_yellow
         
-        if self.image_count>=1:
-            
-            self.curr_teal_center = self._image_to_cam(teal_center)
-            self.curr_green_center = self._image_to_cam(green_center)
-            self.curr_blue_center = self._image_to_cam(blue_center)
-            self.curr_yellow_center = self._image_to_cam(yellow_center)
-            print("Current Coordinates:")
         
-        print("teal:", teal_center)
-        print("Green:", green_center)
-        print("Blue:", blue_center)
-        print("Yellow:", yellow_center)
+            
+        self.curr_teal_center = self._image_to_cam(teal_center)
+        self.curr_green_center = self._image_to_cam(green_center)
+        self.curr_blue_center = self._image_to_cam(blue_center)
+        self.curr_yellow_center = self._image_to_cam(yellow_center)
+        print("Current Coordinates:")
+        
+        print("teal:", self.curr_teal_center)
+        print("Green:", self.curr_green_center)
+        print("Blue:", self.curr_blue_center)
+        print("Yellow:", self.curr_yellow_center)
         
         filename_teal = 'saved_ros2_teal_image.png'
         filename_blue = 'saved_ros2_blue_image.png'
@@ -660,19 +663,21 @@ class HoverFunc(Node):
             time.sleep(0.05)
 
 
-    def _visual_servo(self, tol=0.01, max_time=60.0, period=0.1):
+    def _visual_servo(self, tol=0.03, max_time=60.0, period=0.01):
         self.log_feats = []
         end = time.monotonic() + max_time
 
-        while rclpy.ok() and time.monotonic() < end:
-            if self.curr_feats is None:
+        while rclpy.ok():
+            if self.curr_img_feats is None:
                 time.sleep(0.05)
                 continue
-
-            s = self.curr_feats.copy()
+            #if self.ee_velocity_client.wait_for_service(timeout_sec=1.0):
+            #    break
+            s = self.curr_img_feats.copy()
             e = s - self.des_feats                # 8x1
+            print("s:", s)
             self.log_feats.append(s.flatten())
-
+            print("e:", e)
             if np.linalg.norm(e) < tol:
                 self.get_logger().info("s = s*")
                 break 
@@ -683,12 +688,26 @@ class HoverFunc(Node):
 
             v[:3] = np.clip(v[:3], -self.max_lin, self.max_lin)
             v[3:] = np.clip(v[3:], -self.max_ang, self.max_ang)
+            print("v:", v)
+            #if not self.set_ee_velocity(*v):
+            #    break
+            if not self.move_ee_velocity(vx=v[0],vy=v[1], vz=v[2], wx=v[3], wy=v[4], wz=v[5], duration=period):
+                time.sleep(period)
+                #break
+            #try:
+                #if not self.move_ee_velocity( vy=0.03, vz=0.03, wx=-0.16, wz=0.03, duration=3.0):
+                    #return
+            #if not self.move_ee_velocity( vy=0.03, vz=0.03, wy=0.008, wz=0.008, duration=3.0):
+             #   return
+        
+            #finally:
+            # Also request a stop if a command fails or the user interrupts.
+            # If ROS has shut down, the interface watchdog stops stale commands.
+            
+                #stopped = self.set_ee_velocity() if rclpy.ok() else False
+            #time.sleep(0.3)
 
-            if not self.set_ee_velocity(*v):
-                break
-            time.sleep(period)
-
-        self.set_ee_velocity() 
+        self.set_ee_velocity()
         self._plot_trajectories()
 
     def _plot_trajectories(self):
