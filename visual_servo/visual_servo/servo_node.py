@@ -106,6 +106,9 @@ class HoverFunc(Node):
         )
         self._validate_parameters()
 
+        self.curr_pixels = None
+        self.log_pixels = []  
+
         self.latest_image = None
         self.image_count = 0
         self.cam_cent_x = 320
@@ -323,13 +326,20 @@ class HoverFunc(Node):
         masked_image_blue = cv_image & mask_blue
         masked_image_yellow = cv_image & mask_yellow
         
-        
+        if self.image_count >= 1:
+            self.curr_teal_center = self._image_to_cam(teal_center)
+            self.curr_green_center = self._image_to_cam(green_center)
+            self.curr_blue_center = self._image_to_cam(blue_center)
+            self.curr_yellow_center = self._image_to_cam(yellow_center)
+            print("Current Coordinates:")
+
+            self.curr_pixels = np.array([
+                teal_center, green_center, blue_center, yellow_center
+            ]).flatten()
+
+        if None in (teal_center, green_center, blue_center, yellow_center):
+            return
             
-        self.curr_teal_center = self._image_to_cam(teal_center)
-        self.curr_green_center = self._image_to_cam(green_center)
-        self.curr_blue_center = self._image_to_cam(blue_center)
-        self.curr_yellow_center = self._image_to_cam(yellow_center)
-        print("Current Coordinates:")
         
         print("teal:", self.curr_teal_center)
         print("Green:", self.curr_green_center)
@@ -677,6 +687,8 @@ class HoverFunc(Node):
             e = s - self.des_feats                # 8x1
             print("s:", s)
             self.log_feats.append(s.flatten())
+            self.log_pixels.append(self.curr_pixels.copy())
+            
             print("e:", e)
             if np.linalg.norm(e) < tol:
                 self.get_logger().info("s = s*")
@@ -715,22 +727,33 @@ class HoverFunc(Node):
         matplotlib.use("Agg")
         import matplotlib.pyplot as plt
 
-        data = np.array(self.log_feats)
+        if len(self.log_pixels) == 0:
+            return
+
+        data = np.array(self.log_pixels)          # N x 8, already in pixels yayyyy
         names = ["teal", "green", "blue", "yellow"]
-        f = self.focal * 1e-3
-        s = self.pix_size * 1e-3
+        desired = [self.des_teal_center, self.des_green_center,
+                self.des_blue_center, self.des_yellow_center]
+
         fig, ax = plt.subplots()
         for i, name in enumerate(names):
-            # convert back to pixels so the plot matches the image plane
-            u = data[:, 2*i] / s + self.cam_cent_x
-            v = data[:, 2*i+1] / s + self.cam_cent_y
-            ax.plot(u, v, label=name)
-            ax.plot(u[0], v[0], "o")
-            ax.plot(u[-1], v[-1], "x")
-        des = self.des_feats.flatten()
-        ax.set_xlabel("u (px)"); ax.set_ylabel("v (px)")
-        ax.invert_yaxis(); ax.legend(); ax.set_title("Feature trajectories")
+            u = data[:, 2*i]
+            v = data[:, 2*i + 1]
+            line, = ax.plot(u, v, label=name)
+            ax.plot(u[0], v[0], "o", color=line.get_color())
+            ax.plot(u[-1], v[-1], "x", color=line.get_color())
+            ax.plot(desired[i][0], desired[i][1], "*", color=line.get_color(),
+                    markersize=12)        
+            
+        ax.set_xlabel("u (px)")
+        ax.set_ylabel("v (px)")
+        ax.invert_yaxis()                          # image y points down
+        ax.legend()
+        ax.set_title("Feature trajectories in the image plane")
         fig.savefig("feature_trajectories.png", dpi=150)
+
+        np.savetxt("feature_trajectories.csv", data, delimiter=",",
+                header="u_teal,v_teal,u_green,v_green,u_blue,v_blue,u_yellow,v_yellow")
 
             
 
